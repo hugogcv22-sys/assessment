@@ -1,0 +1,341 @@
+@import "tailwindcss" source(none);
+@source "./trolley-body.html";
+@source "./trolley-script.js";
+        :root {
+            --moj-cream: #F2F0E6;
+            --moj-blue: #1434CB;
+            --moj-orange: #FF6B00;
+            --moj-pink: #D90452;
+            --moj-yellow: #FFC700;
+            --moj-teal: #00A8B5;
+            --moj-mint: #98E2C6;
+            --moj-black: #141414;
+            --defense-surface: #161822;
+            --defense-border: #343640;
+            --defense-muted: #c4c7ce;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--moj-cream);
+            color: var(--moj-black);
+            overflow-x: hidden;
+            transition: background-color 0.7s cubic-bezier(0.16, 1, 0.3, 1), color 0.7s ease;
+        }
+
+        body.universe-mode {
+            background-color: #0B0C10;
+            color: #F2F0E6;
+        }
+
+        .font-anton { font-family: 'Anton', sans-serif; letter-spacing: 0; line-height: 1.15; }
+        .font-mono-code { font-family: 'JetBrains Mono', monospace; }
+        .font-scrawl { font-family: 'Caveat', cursive; }
+        .font-serif-editorial { font-family: 'Fraunces', serif; }
+
+        /* Light Canvas Dot Matrix */
+        .canvas-grid {
+            background-image: radial-gradient(rgba(20, 20, 20, 0.16) 1.5px, transparent 1.5px);
+            background-size: 26px 26px;
+        }
+
+        /* ================================================================= */
+        /* 3D SPHERICAL / CYLINDRICAL ORBIT STAGE                            */
+        /* ================================================================= */
+        .scene-3d {
+            perspective: 1400px;
+            perspective-origin: 50% 46%;
+        }
+
+        .orbit-ring {
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.2, 0.85, 0.25, 1.02);
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            cursor: grab;
+        }
+
+        .orbit-ring:active {
+            cursor: grabbing;
+        }
+
+        .orbit-card {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.65s cubic-bezier(0.2, 0.85, 0.25, 1.05), filter 0.55s ease, opacity 0.55s ease;
+            backface-visibility: visible;
+            user-select: none;
+        }
+
+        /* Central 3D Gravity Core & Gyroscope Rings inside the Sphere */
+        .gravity-core- assembly {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 240px;
+            height: 240px;
+            transform-style: preserve-3d;
+            transform: translate3d(-50%, -50%, 0px);
+            pointer-events: none;
+        }
+
+        .gravity-core {
+            position: absolute;
+            inset: 25px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, #FFC700 0%, #FF6B00 28%, #D90452 58%, rgba(20,52,203,0) 76%);
+            filter: blur(10px);
+            animation: corePulse 3.6s ease-in-out infinite;
+        }
+
+        .gyro-ring-1 {
+            position: absolute;
+            inset: 0;
+            border: 2px dashed rgba(20, 52, 203, 0.55);
+            border-radius: 9999px;
+            animation: spin3D1 14s linear infinite;
+        }
+
+        .gyro-ring-2 {
+            position: absolute;
+            inset: -18px;
+            border: 2px solid rgba(217, 4, 82, 0.4);
+            border-radius: 9999px;
+            animation: spin3D2 18s linear infinite;
+        }
+
+        @keyframes corePulse {
+            0%, 100% { transform: scale(0.95); opacity: 0.82; }
+            50% { transform: scale(1.18); opacity: 1; }
+        }
+
+        @keyframes spin3D1 {
+            0% { transform: rotateX(65deg) rotateY(15deg) rotateZ(0deg); }
+            100% { transform: rotateX(65deg) rotateY(15deg) rotateZ(360deg); }
+        }
+
+        @keyframes spin3D2 {
+            0% { transform: rotateX(-45deg) rotateY(55deg) rotateZ(360deg); }
+            100% { transform: rotateX(-45deg) rotateY(55deg) rotateZ(0deg); }
+        }
+
+        /* Floating Brandbook Particles */
+        @keyframes floatZ1 {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            50% { transform: translate3d(0, -18px, 30px) rotate(4deg); }
+        }
+        @keyframes floatZ2 {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            50% { transform: translate3d(0, 16px, -25px) rotate(-4deg); }
+        }
+        .particle-float-1 { animation: floatZ1 6s ease-in-out infinite; }
+        .particle-float-2 { animation: floatZ2 7.5s ease-in-out infinite; }
+
+        /* Handwritten Marginalia Reveal on Active/Hovered Polaroid */
+        .scrawl-annotation {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(10px) scale(0.88) rotate(-3deg);
+            filter: drop-shadow(0px 3px 2px rgba(242, 240, 230, 0.98));
+        }
+        .orbit-card:hover .scrawl-annotation,
+        .orbit-card.is-front .scrawl-annotation {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(0deg);
+        }
+
+        /* Warp Into Core Animation */
+        @keyframes warpIntoCore {
+            0% { transform: scale(1) translateZ(0); opacity: 1; filter: blur(0px); }
+            40% { transform: scale(0.38) translateZ(-550px) rotate(4deg); opacity: 0.85; filter: blur(2px); }
+            100% { transform: scale(7.5) translateZ(1000px); opacity: 0; filter: blur(24px); }
+        }
+        .warp-active {
+            animation: warpIntoCore 0.72s forwards cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* Universe Panels */
+        .universe-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .universe-panel.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Interactive Hyperlinks inside Substacks */
+        .substack-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(20, 52, 203, 0.12);
+            color: #1434CB;
+            border-bottom: 2px solid #FF6B00;
+            padding: 1px 7px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .substack-link:hover {
+            background: #1434CB;
+            color: #FFC700;
+            transform: translateY(-1px);
+        }
+
+        /* Highlight Pulse when jumping via hyperlink */
+        @keyframes highlightFlash {
+            0% { background-color: rgba(255, 199, 0, 0.65); transform: scale(1.01); }
+            100% { background-color: transparent; transform: scale(1); }
+        }
+        .flash-target {
+            animation: highlightFlash 2.4s ease-out;
+            border-radius: 6px;
+        }
+
+        /* Operator X-Ray Mode */
+        .xray-tag {
+            display: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .xray-active .xray-voice { background: rgba(255, 107, 0, 0.18); border-left: 4px solid #FF6B00; padding-left: 10px; }
+        .xray-active .xray-lexicon { background: rgba(217, 4, 82, 0.15); border-left: 4px solid #D90452; padding-left: 10px; }
+        .xray-active .xray-ecosystem { background: rgba(20, 52, 203, 0.18); border-left: 4px solid #1434CB; padding-left: 10px; }
+        .xray-active .xray-tag { display: inline-block; }
+
+        .game-card {
+            transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+    
+/* Shortlist table: handwriting notes & roomier typography */
+.handwritten {
+  font-family: "Homemade Apple", "Caveat", cursive;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #ffd98a;
+}
+.talent-row p {
+  line-height: 1.9;
+}
+
+/* Reading rhythm within the isolated proposal document. */
+#portal-stage { justify-content: flex-start; gap: 32px; padding-top: 40px; padding-bottom: 40px; }
+#portal-stage > .text-center { position: relative; z-index: 35; }
+#portal-stage h1 { line-height: 1.12; }
+#portal-stage > .text-center > p { margin-top: 24px; }
+#orbit-stage-wrapper { margin: 140px auto 0; padding: 32px 0 24px; }
+#orbit-stage-wrapper > .flex { margin-top: 80px; }
+.orbit-card h3 { font-size: 22px; line-height: 1.18; }
+.orbit-card .scrawl-annotation { top: -86px; }
+#universe-stage { max-width: 1280px; padding: 48px 40px 80px; }
+.universe-panel > * + * { margin-top: 40px; }
+.universe-panel > :first-child { padding-bottom: 28px; }
+.universe-panel h2 { line-height: 1.2; margin-top: 12px; }
+.universe-panel h3 { line-height: 1.25; }
+.universe-panel p { line-height: 1.75; }
+.universe-panel code { overflow-wrap: anywhere; }
+.universe-panel .flex { min-width: 0; }
+#uni-2 > .grid { grid-template-columns: 1fr; gap: 48px; }
+#uni-2 > .grid > div { padding: 32px; }
+#uni-2 > .grid > div > .flex { flex-wrap: wrap; gap: 16px; }
+.reel-beat { padding: 22px 24px; line-height: 1.85; font-size: 14px; border-radius: 8px; background: var(--moj-black); border: 1px solid var(--moj-teal); color: var(--moj-cream); cursor: pointer; }
+.reel-beat:hover, .reel-beat:focus-visible { border-color: var(--moj-yellow); }
+.reel-beat strong, .reel-beat > div:first-child { color: var(--moj-yellow); }
+.reel-beat > div:first-child { display: flex; flex-wrap: wrap; gap: 12px; }
+.reel-beat p { margin-top: 12px; }
+.talent-row { padding: 40px 32px; gap: 32px; }
+.talent-row > div { min-width: 0; }
+.talent-row > div:first-child > img { width: 144px; height: 176px; object-position: top; border-radius: 8px; }
+.talent-row > div:first-child span { display: inline-block; white-space: normal; line-height: 1.7; }
+.talent-row > div:nth-child(2) img { aspect-ratio: 3 / 4; object-position: top; border-radius: 8px; }
+.talent-row h3 { font-size: 28px; }
+.handwritten { font-size: 17px; }
+#uni-3 > .hidden { display: none; }
+#uni-5 > .grid { gap: 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#uni-5 .game-card > div:last-child { padding: 24px; font-size: 14px; }
+#uni-5 .game-card > div:first-child { height: 260px; }
+#uni-5 img { object-position: top; }
+#uni-6 > .grid { grid-template-columns: minmax(260px, 360px) minmax(0, 1fr); gap: 40px; }
+#uni-6 > .grid > div { grid-column: auto; }
+#uni-6 .reel-beat + .reel-beat { margin-top: 20px; }
+#hero-reel-placeholder > .flex:first-child { flex-direction: column; align-items: flex-start; gap: 12px; }
+#player-time-badge { white-space: nowrap; }
+#player-caption-text { line-height: 1.25; font-size: 26px; }
+#player-source-note { line-height: 1.5; font-size: 18px; }
+#moj-beat-text { line-height: 1.25; }
+/* Complete defense content, using the command center's own visual language. */
+.defense-intro { max-width: 900px; margin: 0 auto; text-align: center; }
+.defense-intro > div, .defense-card > div:first-child { color: var(--moj-yellow); font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8; }
+.defense-intro h2 { font-family: 'Anton', sans-serif; font-size: 48px; margin: 24px 0; color: var(--moj-cream); }
+.defense-intro > p { max-width: 720px; margin: 0 auto; font-size: 18px; color: var(--defense-muted); }
+.defense-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.defense-card { background: var(--defense-surface); border: 1px solid var(--defense-border); border-radius: 8px; padding: 32px; min-width: 0; }
+.defense-card h3, .defense-distribution h3 { font-family: 'Anton', sans-serif; font-size: 28px; color: var(--moj-cream); margin: 20px 0; }
+.defense-card p, .defense-distribution p { font-size: 16px; color: var(--defense-muted); }
+.defense-card strong, .defense-distribution strong { color: var(--moj-cream); }
+.defense-card:nth-child(2) > div:first-child { color: var(--moj-mint); }
+.defense-card:nth-child(3) > div:first-child { color: var(--moj-orange); }
+.defense-card:nth-child(4) { border-color: var(--moj-yellow); }
+.defense-distribution { grid-column: 1 / -1; border-top: 2px solid var(--moj-teal); padding-top: 40px; min-width: 0; }
+.defense-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8; color: var(--moj-yellow); }
+.defense-meta > div { flex: 1 1 300px; }
+.defense-meta > span { color: var(--moj-mint); }
+.defense-workflow { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; margin-top: 28px; }
+.defense-workflow-main > p + p { margin-top: 20px; }
+.defense-protocol { border-left: 3px solid var(--moj-orange); padding: 20px; margin-top: 28px; background: var(--defense-surface); }
+.defense-protocol > p + p { margin-top: 12px; }
+.defense-compliance { padding-left: 28px; border-left: 1px solid var(--defense-border); }
+.defense-compliance > span { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--moj-mint); }
+.defense-preset { padding: 20px 0; border-bottom: 1px solid var(--defense-border); }
+.defense-preset strong { display: block; margin-bottom: 10px; }
+.defense-samples { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--defense-border); }
+.defense-video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 28px 0; }
+.defense-video-grid figure { min-width: 0; }
+.defense-video-grid figure > div { background: var(--moj-black); border: 1px solid var(--moj-teal); border-radius: 8px; overflow: hidden; }
+.defense-video-grid video { display: block; width: 100%; height: 480px; max-height: 65vh; object-fit: contain; }
+.defense-video-grid figcaption { font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8; color: var(--defense-muted); margin-top: 14px; }
+@media (max-width: 900px) {
+  .defense-grid, .defense-workflow { grid-template-columns: 1fr; }
+  .defense-compliance { padding-left: 0; padding-top: 24px; border-left: 0; border-top: 1px solid var(--defense-border); }
+}
+@media (max-width: 600px) {
+  .defense-card { padding: 24px 20px; }
+  .defense-video-grid { grid-template-columns: 1fr; }
+  .defense-meta > div { flex-basis: 100%; }
+}
+@media (min-width: 1000px) {
+  .talent-row { grid-template-columns: 260px minmax(0, 1fr); gap: 32px 48px; }
+  .talent-row > div { grid-column: auto; }
+  .talent-row > div:first-child { grid-row: span 2; }
+  .talent-row > div:nth-child(3) { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  #universe-stage { padding: 28px 16px 56px; }
+  #orbit-stage-wrapper { margin-top: 140px; }
+  #orbit-stage-wrapper > .flex > .flex { gap: 8px; flex-wrap: wrap; justify-content: center; }
+  #uni-2 > .grid > div, .talent-row { padding: 24px 16px; }
+  #uni-5 > .grid, #uni-6 > .grid { grid-template-columns: 1fr; }
+  .universe-panel h2 { font-size: 30px; }
+  #uni-3 > div:first-child > .flex { flex-wrap: wrap; gap: 8px; }
+  .reel-beat { padding: 20px 16px; }
+  #portal-stage h1 { font-size: 48px; }
+}

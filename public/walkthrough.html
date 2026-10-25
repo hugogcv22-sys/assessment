@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Coordinator Practical Test // Interactive Walkthrough by Hugo Castro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- BRANDBOOK 2025 TYPOGRAPHY SYSTEM: ANTON (Headings) + PLUS JAKARTA SANS (Web twin of 'NOW' Geometric Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/hero-teaser.css">
+    <style>
+        :root {
+            /* EXACT MOJ BRANDBOOK 2025 PALETTE */
+            --moj-white: #FFFFFF;
+            --moj-cream: #F0EFE6;
+            --moj-black: #191919;
+            --moj-yellow: #F5C400;
+            --moj-orange: #F47300;
+            --moj-crimson: #C80046;
+            --moj-mint: #9CE8D8;
+            --moj-teal: #00A5B5;
+            --moj-blue: #1434CB;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--moj-white);
+            color: var(--moj-black);
+            overflow-x: hidden;
+            font-size: 17px;
+            line-height: 1.75;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-mono-code { font-family: ui-monospace, monospace; letter-spacing: 0; }
+        .reel-beat { overflow-wrap: anywhere; }
+        .reel-beat:focus-visible { outline: 2px solid var(--moj-blue); outline-offset: 3px; }
+        .human-gallery { padding: 64px 24px 80px; border-top: 1px solid var(--moj-cream); }
+        .instagram-inner { max-width: 1120px; margin: auto; }
+        .instagram-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+        .instagram-heading h2 { font-size: 48px; color: var(--moj-blue); margin-top: 10px; }
+        .instagram-link { display: inline-flex; align-items: center; gap: 12px; color: var(--moj-blue); border-bottom: 1px solid currentColor; padding: 10px 0; white-space: nowrap; }
+        .instagram-grid { display: block; overflow: hidden; background: var(--moj-black); }
+        .instagram-grid img { display: block; width: 100%; height: auto; }
+        .instagram-profile { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 40px; align-items: center; padding: 32px 40px; background: var(--moj-black); color: var(--moj-white); }
+        .instagram-avatar { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--moj-crimson); padding: 5px; object-fit: cover; background: var(--moj-white); }
+        .instagram-profile-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+        .instagram-handle { font-size: 25px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; }
+        .instagram-verified { color: var(--moj-mint); }
+        .instagram-follow { display: inline-flex; align-items: center; justify-content: center; background: var(--moj-blue); color: var(--moj-white); border-radius: 6px; padding: 5px 28px; font-size: 14px; font-weight: 700; }
+        .instagram-follow:hover { background: var(--moj-teal); }
+        .instagram-follow:focus-visible { outline: 2px solid var(--moj-mint); outline-offset: 4px; }
+        .instagram-stats { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 18px; font-size: 14px; }
+        .instagram-bio { font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
+        .instagram-bio a { color: var(--moj-mint); }
+        .instagram-profile-name { font-weight: 700; margin-bottom: 5px; }
+        @media (max-width: 640px) { .instagram-profile { grid-template-columns: 76px minmax(0, 1fr); gap: 18px; padding: 24px 18px; align-items: start; } .instagram-avatar { width: 76px; height: 76px; padding: 3px; } .instagram-profile-top { gap: 10px; margin-bottom: 12px; } .instagram-handle { font-size: 21px; } .instagram-follow { padding: 4px 20px; } .instagram-stats { gap: 8px 16px; font-size: 12px; } .instagram-bio { font-size: 13px; } }
+        .instagram-grid:focus-visible, .instagram-link:focus-visible { outline: 2px solid var(--moj-blue); outline-offset: 5px; }
+        @media (max-width: 640px) { .instagram-heading { align-items: start; flex-direction: column; gap: 12px; } .instagram-heading h2 { font-size: 36px; } .human-gallery { padding: 40px 16px 56px; } }
+
+        /* Brandbook Heading Font: ANTON */
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.02em;
+            line-height: 0.96;
+            text-transform: uppercase;
+        }
+
+        /* Brandbook Geometric Sans ('NOW' style): Wide tracking for minimalist titles */
+        .font-now-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .font-now-label {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* ================================================================= */
+        /* BRANDBOOK POP-ART GRAPHIC DEVICES (COLOR COMBINATIONS & DUOTONES) */
+        /* ================================================================= */
+        .brand-combo-box {
+            position: relative;
+            display: inline-flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 8px;
+        }
+
+        /* Pop Circle Behind Portrait (From Brandbook Moodboard) */
+        .pop-circle-orange::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background-color: var(--moj-orange);
+            border-radius: 9999px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        /* Split Duotone Overlay (From Brandbook Video FX Slide) */
+        .pop-split-mint::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 48%;
+            height: 100%;
+            background-color: rgba(156, 232, 216, 0.55);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
+        .pop-block-teal::after {
+            content: '';
+            position: absolute;
+            bottom: 14px;
+            left: 0;
+            width: 68%;
+            height: 34%;
+            background-color: rgba(0, 165, 181, 0.88);
+            pointer-events: none;
+        }
+
+        /* FLOAT + DEPTH FIELD + WARP */
+        @keyframes polaroidFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(0.4deg); } }
+        .orbit-card .polaroid-frame { animation: polaroidFloat 6s ease-in-out infinite; }
+        .orbit-card[data-index="1"] .polaroid-frame { animation-delay: -1.2s; animation-duration: 6.6s; }
+        .orbit-card[data-index="2"] .polaroid-frame { animation-delay: -2.4s; animation-duration: 5.6s; }
+        .orbit-card[data-index="3"] .polaroid-frame { animation-delay: -3.6s; animation-duration: 7s; }
+        .orbit-card[data-index="4"] .polaroid-frame { animation-delay: -4.8s; animation-duration: 6.2s; }
+        #depth-field { position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+        .df-shape { position:absolute; will-change:transform; transition: transform 0.25s ease-out; }
+        @keyframes dfDrift { 0%,100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+        .df-inner { width:100%; height:100%; animation: dfDrift 12s ease-in-out infinite; }
+        #warp-canvas { position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:0; transition: opacity .25s ease; }
+        #warp-canvas.on { opacity:1; pointer-events:all; }
+        @media (prefers-reduced-motion: reduce) { .orbit-card .polaroid-frame, .df-inner { animation:none; } }
+
+        /* SCROLL REVEAL + PARALLAX FOR SECTION IMAGERY */
+        .reveal-img { opacity: 0; transform: translateY(26px) scale(0.97); transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.2, 0.85, 0.25, 1); will-change: opacity, transform; }
+        .reveal-img.revealed { opacity: 1; transform: translateY(0) scale(1); }
+        .plx { will-change: transform; }
+        @media (prefers-reduced-motion: reduce) { .reveal-img { opacity:1; transform:none; transition:none; } .plx { transform:none !important; } }
+
+        /* ================================================================= */
+        /* 3D SPHERICAL POLAROID ORBIT STAGE                                 */
+        /* ================================================================= */
+        .scene-3d {
+            perspective: 1700px;
+            perspective-origin: 50% 48%;
+        }
+
+        .orbit-ring {
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.2, 0.85, 0.25, 1);
+            position: relative;
+            width: 320px;
+            height: 430px;
+            margin: 0 auto;
+            cursor: grab;
+        }
+        .orbit-ring:active { cursor: grabbing; }
+
+        .orbit-card {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.2, 0.85, 0.25, 1), filter 0.5s ease, opacity 0.5s ease;
+            backface-visibility: visible;
+            user-select: none;
+        }
+
+        .polaroid-frame {
+            background: #FFFFFF;
+            padding: 16px 16px 28px 16px;
+            border: 1px solid rgba(25, 25, 25, 0.09);
+            box-shadow: 0 28px 60px -15px rgba(20, 52, 203, 0.12), 0 10px 25px -5px rgba(25, 25, 25, 0.07);
+        }
+
+        .hover-note {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.2, 0.85, 0.25, 1);
+            transform: translateY(8px);
+        }
+        .orbit-card:hover .hover-note {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Universe Panels */
+        .universe-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: all 0.45s ease;
+        }
+        .universe-panel.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Clean Minimalist Inline Link Pill */
+        .substack-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(20, 52, 203, 0.07);
+            color: var(--moj-blue);
+            border-bottom: 1.5px solid var(--moj-blue);
+            padding: 2px 10px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .substack-link:hover {
+            background: var(--moj-blue);
+            color: #FFFFFF;
+        }
+
+        @keyframes highlightFlash {
+            0% { background-color: rgba(245, 196, 0, 0.45); }
+            100% { background-color: transparent; }
+        }
+        .flash-target {
+            animation: highlightFlash 2.2s ease-out;
+        }
+
+        /* Operator X-Ray Mode */
+        .xray-tag {
+            display: none;
+            font-size: 11px;
+            padding: 3px 10px;
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+        .xray-active .xray-voice { background: rgba(244, 115, 0, 0.08); border-left: 4px solid var(--moj-orange); padding-left: 18px; }
+        .xray-active .xray-lexicon { background: rgba(200, 0, 70, 0.06); border-left: 4px solid var(--moj-crimson); padding-left: 18px; }
+        .xray-active .xray-ecosystem { background: rgba(20, 52, 203, 0.06); border-left: 4px solid var(--moj-blue); padding-left: 18px; }
+        .xray-active .xray-tag { display: inline-block; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#1434CB] selection:text-white">
+
+    <!-- ================================================================= -->
+    <!-- TOP HEADER: MINIMALIST BRANDBOOK NAVIGATION                       -->
+    <!-- ================================================================= -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-neutral-200 px-6 lg:px-12 py-4 flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center space-x-3">
+            <!-- Brandbook Nested Square Icon -->
+            <div class="w-5 h-5 bg-[#1434CB] flex items-end justify-end p-0.5">
+                <div class="w-2 h-2 bg-[#F47300]"></div>
+            </div>
+            <span class="font-now-label text-xs text-[#191919]">
+                MARKETING COORDINATOR PRACTICAL TEST <span class="text-neutral-300 mx-1">/</span> <span class="text-[#1434CB]">HUGO CASTRO</span>
+            </span>
+        </div>
+
+        <!-- Clean Minimalist Navigation Pills -->
+        <nav id="hud-nav" class="flex flex-wrap items-center gap-2 text-[11px] font-now-label">
+            <button onclick="returnToPortal()" class="px-3.5 py-2 bg-[#191919] text-white hover:bg-[#1434CB] transition">
+                HOME ORBIT
+            </button>
+            <button onclick="warpFromHud('uni-1')" id="nav-uni-1" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                1.1 SUBSTACK
+            </button>
+            <button onclick="warpFromHud('uni-2')" id="nav-uni-2" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                1.2 INSTAGRAM
+            </button>
+            <button onclick="warpFromHud('uni-3')" id="nav-uni-3" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                2.1 SHORTLIST
+            </button>
+            <button onclick="warpFromHud('uni-4')" id="nav-uni-4" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                2.2 CAMPAIGN
+            </button>
+            <button onclick="warpFromHud('uni-5')" id="nav-uni-5" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                2.3 MOODBOARD
+            </button>
+            <button onclick="warpFromHud('uni-6')" id="nav-uni-6" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                2.4 HERO REEL
+            </button>
+            <button onclick="warpFromHud('uni-7')" id="nav-uni-7" class="hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition">
+                PART 3 DEFENSE
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================================================================= -->
+    <!-- HOME PORTAL: PURE WHITE MINIMALISM + POP-ART POLAROIDS            -->
+    <!-- ================================================================= -->
+    <section id="portal-stage" class="relative flex-1 flex flex-col justify-between items-center py-16 px-6 overflow-hidden min-h-[90vh] bg-white">
+        <div id="depth-field"><div class="df-shape" data-depth="0.9" style="left:8%;top:14%;width:90px;height:90px;filter:blur(4px);opacity:0.1"><div class="df-inner" style="background:#1434CB;border-radius:50%;animation-delay:-0s"></div></div><div class="df-shape" data-depth="0.6" style="left:80%;top:22%;width:140px;height:140px;filter:blur(7px);opacity:0.25"><div class="df-inner" style="background:#9CE8D8;transform:rotate(18deg);animation-delay:-5s"></div></div><div class="df-shape" data-depth="0.4" style="left:15%;top:70%;width:60px;height:60px;filter:blur(1px);opacity:0.6"><div class="df-inner" style="width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:60px solid #FFC629;animation-delay:-6s"></div></div><div class="df-shape" data-depth="0.7" style="left:70%;top:75%;width:110px;height:110px;filter:blur(5px);opacity:0.18"><div class="df-inner" style="background:#F0EFE6;border-radius:50%;animation-delay:-2s"></div></div><div class="df-shape" data-depth="0.25" style="left:45%;top:8%;width:40px;height:40px;filter:blur(0px);opacity:0.9"><div class="df-inner" style="background:#1434CB;transform:rotate(18deg);animation-delay:-4s"></div></div><div class="df-shape" data-depth="0.35" style="left:90%;top:55%;width:50px;height:50px;filter:blur(2px);opacity:0.5"><div class="df-inner" style="background:#FF5A5F;border-radius:50%;animation-delay:-5s"></div></div><div class="df-shape" data-depth="1.0" style="left:30%;top:40%;width:200px;height:200px;filter:blur(10px);opacity:0.08"><div class="df-inner" style="border:3px solid #1434CB;border-radius:50%;animation-delay:-2s"></div></div><div class="df-shape" data-depth="0.3" style="left:58%;top:60%;width:36px;height:36px;filter:blur(0px);opacity:0.5"><div class="df-inner" style="width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:36px solid #00A5B5;animation-delay:-0s"></div></div><div class="df-shape" data-depth="0.5" style="left:4%;top:45%;width:70px;height:70px;filter:blur(3px);opacity:0.35"><div class="df-inner" style="background:#F0EFE6;transform:rotate(18deg);animation-delay:-7s"></div></div></div>
+        <canvas id="warp-canvas"></canvas>
+
+        <!-- Brandbook "Color Combinations" Nested Squares (Top Left & Right) -->
+        <div class="hidden lg:flex absolute top-12 left-12 w-16 h-16 bg-[#1434CB] items-end justify-end p-2">
+            <div class="w-5 h-5 bg-[#9CE8D8]"></div>
+        </div>
+        <div class="hidden lg:flex absolute top-12 right-12 flex-col items-end">
+            <span class="font-anton text-xl text-[#1434CB] tracking-wide">ASSESSMENT 2026</span>
+            <span class="font-now-label text-[10px] text-neutral-400">MOJ BRANDBOOK SYSTEM</span>
+        </div>
+
+        <!-- MINIMALIST CENTER TITLE (INSPIRED BY "WHO IS MOJ MAHDARA" SLIDE) -->
+        <div class="relative z-20 text-center max-w-4xl mx-auto pt-4 space-y-3">
+            <p class="font-now-title text-lg sm:text-2xl font-light text-[#1434CB]">
+                INTERACTIVE ASSESSMENT WALKTHROUGH
+            </p>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl tracking-wider uppercase text-[#1434CB] leading-none">
+                <span class="font-extrabold">STEP INTO</span> <span class="font-light">FOUNDER MODE</span>
+            </h1>
+            <p class="text-sm sm:text-base text-neutral-500 font-light max-w-xl mx-auto pt-2">
+                Rotate the Pop-Art Polaroids below or select any module to explore the full strategy, editorial writing, casting research, and video production.
+            </p>
+        </div>
+
+        <!-- 3D SPHERICAL POLAROID CAROUSEL WITH POP-ART ACCENTS -->
+        <div id="orbit-stage-wrapper" class="relative z-30 w-full max-w-6xl mx-auto mt-10 mb-4 pt-20 pb-16 flex flex-col items-center justify-center scene-3d">
+            
+            <div id="orbit-ring" class="orbit-ring">
+                <!-- Subtle Pop Circle in Center of Orbit -->
+                <div class="absolute top-1/2 left-1/2 w-56 h-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F0EFE6] pointer-events-none"></div>
+
+                <!-- POLAROID 0: PART 1.1 // SUBSTACK (Teal Pop Block Overlay) -->
+                <div class="orbit-card cursor-pointer" data-index="0" onclick="handlePolaroidClick(0, 'uni-1')">
+                    <div class="hover-note absolute -top-12 left-0 right-0 text-center z-40">
+                        <span class="font-now-label text-[11px] bg-[#1434CB] text-white px-4 py-1.5 shadow-sm">
+                            5 INTERCONNECTED EDITIONS + LIVE HYPERLINKS
+                        </span>
+                    </div>
+                    <div class="polaroid-frame h-full flex flex-col justify-between">
+                        <div class="h-64 bg-[#191919] relative overflow-hidden">
+                            <!-- [IMG-01] Replace with Lovable Prompt #1 -->
+                            <img id="img-orbit-1" src="/__l5e/assets-v1/1e1265e1-7224-4fbe-a81b-85ff4208c2d4/moj_split.jpg" 
+                                 alt="Part 1.1 Substack" 
+                                 class="w-full h-full object-cover grayscale contrast-125" />
+                            <!-- Brandbook Teal Pop Rectangle Overlay -->
+                            <div class="
+                                absolute bottom-4 left-0 bg-[#00A5B5]/90 text-white px-4 py-2.5 w-4/5">
+                                <p class="font-anton text-xl leading-none">MOJ SUBSTACK #5</p>
+                                <p class="text-[11px] font-light tracking-wider uppercase mt-0.5">Part 1.1 // Editorial</p>
+                            </div>
+                            <!-- Nested Square Pop Badge -->
+                            <div class="absolute top-3 right-3 w-8 h-8 bg-[#F5C400] flex items-end justify-end p-1">
+                                <div class="w-3 h-3 bg-[#C80046]"></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-left space-y-1.5">
+                            <div class="flex justify-between items-center text-[11px] font-now-label text-neutral-400">
+                                <span>DELIVERABLE 01</span>
+                                <span class="text-[#1434CB]">EXPLORE ➔</span>
+                            </div>
+                            <h3 class="font-anton text-2xl text-[#191919]">THE NEXT SUBSTACK (#5)</h3>
+                            <p class="text-xs text-neutral-500 font-normal leading-relaxed">
+                                "AI Made Execution Cheap." + Full Archive Continuity (#1–#4)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POLAROID 1: PART 1.2 // INSTAGRAM (Split Mint & Yellow Outline Pop) -->
+                <div class="orbit-card cursor-pointer" data-index="1" onclick="handlePolaroidClick(1, 'uni-2')">
+                    <div class="hover-note absolute -top-12 left-0 right-0 text-center z-40">
+                        <span class="font-now-label text-[11px] bg-[#F47300] text-white px-4 py-1.5 shadow-sm">
+                            3-SLIDE CAROUSEL + 23S ARCHIVAL REEL
+                        </span>
+                    </div>
+                    <div class="polaroid-frame h-full flex flex-col justify-between">
+                        <div class="h-64 bg-[#1434CB] relative overflow-hidden pop-split-mint">
+                            <!-- [IMG-03] Replace with Lovable Prompt #3 -->
+                            <img id="img-orbit-2" src="/__l5e/assets-v1/5398c114-64f2-4bc9-9a0a-af6447c0ef79/moj_outline.jpg"
+                                 alt="Part 1.2 Instagram"
+                                 class="w-full h-full object-cover mix-blend-luminosity opacity-90" />
+                            <div class="absolute bottom-4 left-0 bg-[#F47300] text-[#F0EFE6] px-4 py-2.5 w-4/5 z-10">
+                                <p class="font-anton text-xl leading-none">INSTAGRAM ECOSYSTEM</p>
+                                <p class="text-[11px] font-light tracking-wider uppercase mt-0.5">Part 1.2 // Social Brand</p>
+                            </div>
+                            <div class="absolute top-3 right-3 w-8 h-8 bg-[#1434CB] flex items-end justify-end p-1 z-10">
+                                <div class="w-3 h-3 bg-[#F47300]"></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-left space-y-1.5">
+                            <div class="flex justify-between items-center text-[11px] font-now-label text-neutral-400">
+                                <span>DELIVERABLE 02</span>
+                                <span class="text-[#1434CB]">EXPLORE ➔</span>
+                            </div>
+                            <h3 class="font-anton text-2xl text-[#191919]">TWO INSTAGRAM PIECES</h3>
+                            <p class="text-xs text-neutral-500 font-normal leading-relaxed">
+                                3-Slide Framework Carousel &amp; 25s Vertical Reel Stage
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POLAROID 2: PART 2.1 // TALENT SHORTLIST (Full Color + Crimson Pop) -->
+                <div class="orbit-card cursor-pointer" data-index="2" onclick="handlePolaroidClick(2, 'uni-3')">
+                    <div class="hover-note absolute -top-12 left-0 right-0 text-center z-40">
+                        <span class="font-now-label text-[11px] bg-[#C80046] text-white px-4 py-1.5 shadow-sm">
+                            2 WOMEN 40+ &amp; 2 MEN 45+ // CASTING BOARD
+                        </span>
+                    </div>
+                    <div class="polaroid-frame h-full flex flex-col justify-between">
+                        <div class="h-64 bg-[#F0EFE6] relative overflow-hidden">
+                            <img id="img-orbit-3" src="/__l5e/assets-v1/ec9f4753-0321-4376-aebb-b90fc374a945/tony_pop.jpg"
+                                 alt="Part 2.1 Talent Shortlist"
+                                 class="w-full h-full object-cover object-top" />
+                            <div class="absolute bottom-4 left-0 bg-[#C80046] text-white px-4 py-2.5 w-4/5">
+                                <p class="font-anton text-xl leading-none">4-TALENT SHORTLIST</p>
+                                <p class="text-[11px] font-light tracking-wider uppercase mt-0.5">Part 2.1 // Longevity 40+</p>
+                            </div>
+                            <div class="absolute top-3 right-3 w-8 h-8 bg-[#C80046] flex items-end justify-end p-1">
+                                <div class="w-3 h-3 bg-[#9CE8D8]"></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-left space-y-1.5">
+                            <div class="flex justify-between items-center text-[11px] font-now-label text-neutral-400">
+                                <span>DELIVERABLE 03</span>
+                                <span class="text-[#1434CB]">EXPLORE ➔</span>
+                            </div>
+                            <h3 class="font-anton text-2xl text-[#191919]">CASTING DOSSIERS</h3>
+                            <p class="text-xs text-neutral-500 font-normal leading-relaxed">
+                                Katie Sturino, Jenna Lyons, Tony Hawk &amp; Rob McElhenney
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POLAROID 3: PART 2.2 & 2.3 // CAMPAIGN & MOODBOARD (Warm Color + Blue Pop) -->
+                <div class="orbit-card cursor-pointer" data-index="3" onclick="handlePolaroidClick(3, 'uni-4')">
+                    <div class="hover-note absolute -top-12 left-0 right-0 text-center z-40">
+                        <span class="font-now-label text-[11px] bg-[#1434CB] text-white px-4 py-1.5 shadow-sm">
+                            KATIE STURINO CAMPAIGN + 8 VISUAL REFS
+                        </span>
+                    </div>
+                    <div class="polaroid-frame h-full flex flex-col justify-between">
+                        <div class="h-64 bg-neutral-900 relative overflow-hidden">
+                            <img id="img-orbit-4" src="/__l5e/assets-v1/8148d250-380c-43e6-ba66-2d3f1e991fff/katie_pop.jpg"
+                                 alt="Part 2.2 Campaign"
+                                 class="w-full h-full object-cover" />
+                            <div class="absolute bottom-4 left-0 bg-[#1434CB] text-white px-4 py-2.5 w-4/5">
+                                <p class="font-anton text-xl leading-none">"DONE SWALLOWING IT."</p>
+                                <p class="text-[11px] font-light tracking-wider uppercase mt-0.5">Part 2.2 &amp; 2.3 // Strategy</p>
+                            </div>
+                            <div class="absolute top-3 right-3 w-8 h-8 bg-[#F47300] flex items-end justify-end p-1">
+                                <div class="w-3 h-3 bg-[#1434CB]"></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-left space-y-1.5">
+                            <div class="flex justify-between items-center text-[11px] font-now-label text-neutral-400">
+                                <span>DELIVERABLE 04 &amp; 05</span>
+                                <span class="text-[#1434CB]">EXPLORE ➔</span>
+                            </div>
+                            <h3 class="font-anton text-2xl text-[#191919]">CAMPAIGN &amp; MOODBOARD</h3>
+                            <p class="text-xs text-neutral-500 font-normal leading-relaxed">
+                                Biological Self-Advocacy &amp; 8-Ref Pop-Minimalist System
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POLAROID 4: PART 2.4 & PART 3 // HERO REEL & DEFENSE -->
+                <div class="orbit-card cursor-pointer" data-index="4" onclick="handlePolaroidClick(4, 'uni-6')">
+                    <div class="hover-note absolute -top-12 left-0 right-0 text-center z-40">
+                        <span class="font-now-label text-[11px] bg-[#00A5B5] text-white px-4 py-1.5 shadow-sm">
+                            27S HERO VIDEO + STRATEGIC DEFENSE
+                        </span>
+                    </div>
+                    <div class="polaroid-frame h-full flex flex-col justify-between">
+                        <div class="h-64 bg-[#191919] relative overflow-hidden flex items-center justify-center">
+                            <img id="img-orbit-5" src="/__l5e/assets-v1/f9db1b1d-b42a-400c-85cc-b499dee53382/moj_stockholm.png"
+                                 alt="Part 2.4 Hero Video"
+                                 class="absolute inset-0 w-full h-full object-cover opacity-75" />
+                            <div class="relative z-10 w-14 h-14 rounded-full bg-[#F5C400] text-[#191919] flex items-center justify-center text-xl font-bold shadow-lg">
+                                ▶
+                            </div>
+                            <div class="absolute bottom-4 left-0 bg-[#191919] text-[#F5C400] px-4 py-2.5 w-4/5 z-10">
+                                <p class="font-anton text-xl leading-none">27S HERO VIDEO &amp; DEFENSE</p>
+                                <p class="text-[11px] text-white font-light tracking-wider uppercase mt-0.5">Part 2.4 &amp; Part 3</p>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-left space-y-1.5">
+                            <div class="flex justify-between items-center text-[11px] font-now-label text-neutral-400">
+                                <span>DELIVERABLE 06 &amp; 07</span>
+                                <span class="text-[#1434CB]">EXPLORE ➔</span>
+                            </div>
+                            <h3 class="font-anton text-2xl text-[#191919]">HERO REEL &amp; DEFENSE</h3>
+                            <p class="text-xs text-neutral-500 font-normal leading-relaxed">
+                                Produced 9:16 Video Cut &amp; Executive Decision Walkthrough
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CLEAN MINIMALIST ORBIT CONTROLS -->
+            <div class="flex flex-col items-center space-y-4 mt-14 z-30">
+                <div class="flex items-center space-x-4">
+                    <button onclick="rotateOrbit(-1)" class="bg-white text-[#191919] hover:bg-[#191919] hover:text-white font-now-label text-[11px] px-6 py-3 border border-neutral-300 transition">
+                        ← PREV
+                    </button>
+                    <button onclick="warpActiveFrontCard()" class="bg-[#1434CB] text-white hover:bg-[#191919] font-now-label text-[11px] px-8 py-3 shadow-md transition">
+                        ENTER SELECTED MODULE ➔
+                    </button>
+                    <button onclick="rotateOrbit(1)" class="bg-white text-[#191919] hover:bg-[#191919] hover:text-white font-now-label text-[11px] px-6 py-3 border border-neutral-300 transition">
+                        NEXT →
+                    </button>
+                </div>
+                <p id="orbit-active-label" class="font-now-label text-[11px] text-neutral-400">
+                    ACTIVE MODULE: PART 1.1 // THE NEXT SUBSTACK (#5)
+                </p>
+            </div>
+        </div>
+
+        <!-- BRANDBOOK ABACUS DOT-LINE DIVIDER (FROM ORANGE SLIDE) -->
+        <div class="w-full max-w-5xl mx-auto pt-8 space-y-2 opacity-90">
+            <div class="relative flex items-center justify-between">
+                <div class="absolute inset-x-0 h-[2px] bg-[#1434CB]"></div>
+                <div class="relative flex space-x-1.5 bg-white px-2">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+                </div>
+                <span class="relative w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+                <div class="relative flex space-x-1.5 bg-white px-2">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+                </div>
+                <span class="relative w-3.5 h-3.5 rounded-full bg-[#1434CB]"></span>
+            </div>
+            <div class="relative flex items-center justify-around">
+                <div class="absolute inset-x-0 h-[2px] bg-[#F5C400]"></div>
+                <span class="relative w-3.5 h-3.5 rounded-full bg-[#F5C400]"></span>
+                <div class="relative flex space-x-1.5 bg-white px-2">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#F5C400]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#F5C400]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#F5C400]"></span>
+                </div>
+                <span class="relative w-3.5 h-3.5 rounded-full bg-[#F5C400]"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MAIN CONTENT STAGE: LONG-SCROLL, SPACIOUS & EDITORIAL             -->
+    <!-- ================================================================= -->
+    <section id="human-gallery" class="human-gallery" aria-label="Moj on Instagram">
+        <div class="instagram-inner">
+            <div class="instagram-heading">
+                <div><span class="font-now-label">MOJ MAHDARA // INSTAGRAM</span><h2 class="font-anton">@MOJ</h2></div>
+                <a class="instagram-link" href="https://www.instagram.com/moj/" target="_blank" rel="noopener noreferrer">View on Instagram <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="instagram-profile">
+                <img id="instagram-avatar-image" class="instagram-avatar" alt="Moj’s illustrated Instagram profile photo" width="150" height="150" />
+                <div>
+                    <div class="instagram-profile-top">
+                        <span class="instagram-handle">moj <span class="instagram-verified" aria-label="Verified">✓</span></span>
+                        <a class="instagram-follow" href="https://www.instagram.com/moj/" target="_blank" rel="noopener noreferrer" aria-label="Follow Moj on Instagram">Follow</a>
+                    </div>
+                    <div class="instagram-stats"><span><strong>2,449</strong> posts</span><span><strong>131K</strong> followers</span><span><strong>5,117</strong> following</span></div>
+                    <div class="instagram-bio">
+                        <p class="instagram-profile-name">Moj</p>
+                        <p>Entrepreneur, Investor + Speaker</p>
+                        <p><a href="https://www.instagram.com/kinshipventures/" target="_blank" rel="noopener noreferrer">@kinshipventures</a></p>
+                        <p><a href="https://www.instagram.com/iraniandiasporacollective/" target="_blank" rel="noopener noreferrer">@iraniandiasporacollective</a> <a href="https://www.instagram.com/afatmahdara/" target="_blank" rel="noopener noreferrer">@afatmahdara</a></p>
+                        <p><a href="https://mojmahdara.com/" target="_blank" rel="noopener noreferrer">mojmahdara.com ↗</a></p>
+                    </div>
+                </div>
+            </div>
+            <a class="instagram-grid" href="https://www.instagram.com/moj/" target="_blank" rel="noopener noreferrer" aria-label="Open Moj’s Instagram profile">
+                <img id="instagram-grid-image" alt="Moj’s Instagram grid, featuring personal moments, conversations and advocacy" />
+            </a>
+        </div>
+    </section>
+    <main id="universe-stage" class="hidden flex-1 w-full bg-white">
+
+        <!-- ============================================================= -->
+        <!-- SECTION 01: PART 1.1 — THE 5 SUBSTACKS (LONG-SCROLL STORY)    -->
+        <!-- ============================================================= -->
+        <div id="uni-1" class="universe-panel">
+
+            <!-- MODULE 1A: SPACIOUS MINIMALIST INTRO BANNER -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center space-y-6">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="w-6 h-6 bg-[#00A5B5] flex items-end justify-end p-1">
+                        <div class="w-2.5 h-2.5 bg-[#F0EFE6]"></div>
+                    </div>
+                    <span class="font-now-label text-xs text-[#1434CB]">PART 1.1 // MOJ'S VOICE &amp; EDITORIAL CONTINUITY</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-6xl text-[#1434CB] tracking-wider uppercase leading-tight">
+                    <span class="font-light">THE SUBSTACK</span> <span class="font-extrabold">ECOSYSTEM</span>
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-neutral-600 text-lg md:text-xl font-light leading-relaxed">
+                    Instead of writing an isolated essay, I mapped the exact intellectual thread across Moj's first four Substacks to write <strong>Edition #5</strong> as a true sequel—complete with her signature dictionary device, verbatim archival truths, and live cross-edition hyperlinks.
+                </p>
+            </section>
+
+            <!-- MODULE 1B: THE STRATEGIC ARCHITECTURE (WHY THIS WINS) -->
+            <section class="bg-[#F0EFE6] py-20 px-6 border-y border-neutral-200">
+                <div class="max-w-6xl mx-auto space-y-12">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                        <div>
+                            <span class="font-now-label text-xs text-[#F47300]">STRATEGIC CONTINUITY MAP</span>
+                            <h3 class="font-anton text-4xl sm:text-5xl text-[#191919] mt-2">HOW EDITIONS #1–#4 BUILD INTO EDITION #5</h3>
+                        </div>
+                        <p class="text-sm text-neutral-600 max-w-md">
+                            Click any of the 5 editions below to switch the reader view, or use the inline blue pills inside the essay to verify every callback.
+                        </p>
+                    </div>
+
+                    <!-- 5 Spacious Edition Selector Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+                        <button onclick="selectSubstackEdition(1)" id="sub-tab-1" class="substack-node text-left bg-white p-6 border border-neutral-200 hover:border-[#1434CB] transition flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-center">
+                                <span class="font-now-label text-[10px] text-neutral-400">EDITION #1</span>
+                                <span class="w-3 h-3 bg-[#191919]"></span>
+                            </div>
+                            <div>
+                                <p class="font-anton text-xl text-[#191919]">WELCOME TO MOJ 3.0</p>
+                                <p class="text-xs text-neutral-500 mt-2 leading-relaxed">Beautycon wipeout, 6 yrs therapy, Kinship &amp; AI as an operating layer.</p>
+                            </div>
+                        </button>
+
+                        <button onclick="selectSubstackEdition(2)" id="sub-tab-2" class="substack-node text-left bg-white p-6 border border-neutral-200 hover:border-[#1434CB] transition flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-center">
+                                <span class="font-now-label text-[10px] text-neutral-400">EDITION #2</span>
+                                <span class="w-3 h-3 bg-[#F47300]"></span>
+                            </div>
+                            <div>
+                                <p class="font-anton text-xl text-[#191919]">FOUNDER MAXXXXING</p>
+                                <p class="text-xs text-neutral-500 mt-2 leading-relaxed">Distribution, Taste &amp; Systems, $1M audit &amp; <em>Cognitive Debt</em>.</p>
+                            </div>
+                        </button>
+
+                        <button onclick="selectSubstackEdition(3)" id="sub-tab-3" class="substack-node text-left bg-white p-6 border border-neutral-200 hover:border-[#1434CB] transition flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-center">
+                                <span class="font-now-label text-[10px] text-neutral-400">EDITION #3</span>
+                                <span class="w-3 h-3 bg-[#C80046]"></span>
+                            </div>
+                            <div>
+                                <p class="font-anton text-xl text-[#191919]">STOP BLAMING AI</p>
+                                <p class="text-xs text-neutral-500 mt-2 leading-relaxed">Global talent without zip codes, Longevity &amp; <em>Context Shifting</em>.</p>
+                            </div>
+                        </button>
+
+                        <button onclick="selectSubstackEdition(4)" id="sub-tab-4" class="substack-node text-left bg-white p-6 border border-neutral-200 hover:border-[#1434CB] transition flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-center">
+                                <span class="font-now-label text-[10px] text-neutral-400">EDITION #4</span>
+                                <span class="w-3 h-3 bg-[#00A5B5]"></span>
+                            </div>
+                            <div>
+                                <p class="font-anton text-xl text-[#191919]">EXPERTS VS BUILDERS</p>
+                                <p class="text-xs text-neutral-500 mt-2 leading-relaxed">Dirty CRM data, touching the ball &amp; launching <em>AI Maxxing</em>.</p>
+                            </div>
+                        </button>
+
+                        <button onclick="selectSubstackEdition(5)" id="sub-tab-5" class="substack-node text-left bg-[#1434CB] text-white p-6 border-2 border-[#1434CB] shadow-lg transition flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-center">
+                                <span class="font-now-label text-[10px] text-[#F5C400]">★ EDITION #5 (NEW)</span>
+                                <span class="w-3 h-3 bg-[#F5C400]"></span>
+                            </div>
+                            <div>
+                                <p class="font-anton text-xl text-white">EXECUTION IS CHEAP</p>
+                                <p class="text-xs text-neutral-200 mt-2 leading-relaxed">Primary Deliverable: <em>Synthetic Momentum</em> &amp; Taste.</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 1C: SPACIOUS EDITORIAL READING ROOM (PURE WHITE) -->
+            <section class="max-w-4xl mx-auto px-6 py-24 md:py-32">
+
+                <!-- ARCHIVE EDITION #1 -->
+                <article id="substack-ed-1" class="substack-article hidden space-y-10">
+                    <div class="flex justify-between items-center border-b border-neutral-200 pb-6">
+                        <span class="font-now-label text-xs text-neutral-400">ARCHIVE EDITION #1 // FOUNDATION</span>
+                        <button onclick="selectSubstackEdition(2)" class="substack-link">Next: Edition #2 ➔</button>
+                    </div>
+                    <h1 class="font-anton text-5xl sm:text-6xl text-[#191919]">Welcome to Moj 3.0: The Reset, The Rebuild, and What I'm Actually Working On</h1>
+                    
+                    <div class="relative overflow-hidden bg-[#191919] h-80">
+                        <img src="/__l5e/assets-v1/a82d1e81-6de8-446e-ae73-4cd22ed227cc/moj_brick.png" 
+                             alt="Moj 3.0 Rebuild" 
+                             class="w-full h-full object-cover opacity-85" />
+                        <div class="absolute bottom-0 left-0 bg-[#00A5B5] text-white px-6 py-3">
+                            <span class="font-now-label text-xs">KINSHIP VENTURES // 80+ PORTFOLIO COMPANIES</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-lg leading-relaxed text-neutral-800">
+                        <p id="ed1-origin"><strong>A Reintroduction — Resetting the Algorithm:</strong> My focus has been resetting my algorithm. In short, I’ve been building <strong>Kinship Ventures</strong> with Gwyneth Paltrow and investing in over 80+ companies across high-tech growth, CPG, wellness, and the future of work — from OpenAI and MoonPay to Olipop and Lovable. <span onclick="jumpToSubstack(5, 'ed5-kinship')" class="substack-link">🔗 See how Kinship &amp; Lovable anchor Edition #5 ➔</span></p>
+                        <p id="ed1-wipeout"><strong>The Beautycon Wipeout &amp; Building Right vs. Building Fast:</strong> COVID shut everything down in 2020. Beautycon was rocked by the pandemic and a terrible cap table. It was a full wipeout — professional, personal, physical. Over the past few years, I’ve been building off-camera. The number one contributor to this shift has been six years of therapy, twice a week. <strong>High agency isn't a vibe. It's a requirement.</strong> There's a difference between building fast and building right. <span onclick="jumpToSubstack(5, 'ed5-friction')" class="substack-link">🔗 Evolves into "Friction as a Filter" in #5 ➔</span></p>
+                        <p id="ed1-ailayer"><strong>AI as an Operating Layer &amp; Failure as a Blueprint:</strong> I ran my own behavioral audit using AI transcripts. ClickUp, Notion, and Slack now function as early warning systems. <strong>Garbage in, garbage out:</strong> AI doesn’t fix the business for you — it reflects it. I think a lot about <strong>failure as a utility and a blueprint</strong>. <span onclick="jumpToSubstack(5, 'ed5-failure')" class="substack-link">🔗 Culminates in #5 (Failure as a Data Point) ➔</span></p>
+                    </div>
+                </article>
+
+                <!-- ARCHIVE EDITION #2 -->
+                <article id="substack-ed-2" class="substack-article hidden space-y-10">
+                    <div class="flex justify-between items-center border-b border-neutral-200 pb-6">
+                        <button onclick="selectSubstackEdition(1)" class="substack-link">⬅ Prev: Edition #1</button>
+                        <span class="font-now-label text-xs text-neutral-400">ARCHIVE EDITION #2 // MAY 26</span>
+                        <button onclick="selectSubstackEdition(3)" class="substack-link">Next: Edition #3 ➔</button>
+                    </div>
+                    <h1 class="font-anton text-5xl sm:text-6xl text-[#191919]">Blue Bottle Americano x Founder Maxxxxxing</h1>
+
+                    <div class="relative overflow-hidden h-80">
+                        <!-- [IMG-02] Replace with Lovable Prompt #2 -->
+                        <img src="/portable-media/photo-1511920170033-f8396924c348.jpg" 
+                             alt="Founder Maxxxing Dinner" 
+                             class="w-full h-full object-cover" />
+                        <div class="absolute bottom-0 left-0 bg-[#F47300] text-white px-6 py-3">
+                            <span class="font-now-label text-xs">THE MAGIC OF AI DINNER // GWYNETH PALTROW, JOAN NGUYEN &amp; LOVABLE</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-lg leading-relaxed text-neutral-800">
+                        <p id="ed2-pillars"><strong>The Three Things That Define Great Companies Right Now:</strong> Every company I’d bet on is strong in three things: <strong>1) Distribution and community</strong> (fandom is your MOAT), <strong>2) Taste, perspective, and authority</strong> (a founder-led POV consistent enough that people feel it without being told what to feel), and <strong>3) Systems and leverage</strong> (operationalized via Trolley AI). <span onclick="jumpToSubstack(5, 'ed5-taste')" class="substack-link">🔗 Direct Anchor for "Taste Is Expensive" in #5 ➔</span></p>
+                        <p id="ed2-inspect"><strong>AI &amp; Found Currency ($1M Audit):</strong> We connected a portfolio company's financial system to Claude and found close to $1M in buried vendor fees in one hour. The money wasn't hidden; it was uninspected. <strong>What you don't inspect, people don't respect.</strong> <span onclick="jumpToSubstack(5, 'ed5-inspect')" class="substack-link">🔗 Echoed in #5 Closing Law ➔</span></p>
+                        <div id="ed2-dict" class="bg-[#F0EFE6] border-l-4 border-[#1434CB] p-8">
+                            <p class="text-2xl font-bold text-[#191919]">Cognitive debt <span class="text-sm font-normal text-[#1434CB] ml-2">| BRAYN-freez | noun</span></p>
+                            <p class="text-base mt-3">The accumulated cost of thinking you chose not to do. Accrues in four forms: <em>Structural debt, Decision debt, Language debt, and Attention debt</em>.</p>
+                            <div class="mt-4">
+                                <span onclick="jumpToSubstack(5, 'ed5-dict')" class="substack-link">🔗 Evolves into "Synthetic Momentum" in #5 ➔</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARCHIVE EDITION #3 -->
+                <article id="substack-ed-3" class="substack-article hidden space-y-10">
+                    <div class="flex justify-between items-center border-b border-neutral-200 pb-6">
+                        <button onclick="selectSubstackEdition(2)" class="substack-link">⬅ Prev: Edition #2</button>
+                        <span class="font-now-label text-xs text-neutral-400">ARCHIVE EDITION #3 // JUNE 04</span>
+                        <button onclick="selectSubstackEdition(4)" class="substack-link">Next: Edition #4 ➔</button>
+                    </div>
+                    <h1 class="font-anton text-5xl sm:text-6xl text-[#191919]">Stop Blaming AI. The Real Disruption Is Already Happening.</h1>
+
+                    <div class="space-y-6 text-lg leading-relaxed text-neutral-800">
+                        <p id="ed3-global"><strong>Quiet Restructuring (Global Talent Without Zip Codes):</strong> Proximity was never a qualification — it was a habit built for 2019. Enabled by Activate Talent, Deel, Trolley.AI, Granola, and Notion, the best operators build where the talent lives.</p>
+                        <div id="ed3-dict" class="bg-[#F0EFE6] border-l-4 border-[#C80046] p-8">
+                            <p class="text-2xl font-bold text-[#191919]">context shifting <span class="text-sm font-normal text-[#C80046] ml-2">| ˈkän-tekst ˈshif-tiŋ | noun</span></p>
+                            <p class="text-base mt-3">The cognitive cost of moving between fundamentally different mental models inside the same day. Often misdiagnosed as burnout. What looked like an energy problem was a clarity problem.</p>
+                            <div class="mt-4">
+                                <span onclick="jumpToSubstack(5, 'ed5-dict')" class="substack-link">🔗 Connects to Synthetic Momentum (#5) ➔</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARCHIVE EDITION #4 -->
+                <article id="substack-ed-4" class="substack-article hidden space-y-10">
+                    <div class="flex justify-between items-center border-b border-neutral-200 pb-6">
+                        <button onclick="selectSubstackEdition(3)" class="substack-link">⬅ Prev: Edition #3</button>
+                        <span class="font-now-label text-xs text-neutral-400">ARCHIVE EDITION #4 // AUG 04</span>
+                        <button onclick="selectSubstackEdition(5)" class="substack-link">Next: Edition #5 (NEW) ➔</button>
+                    </div>
+                    <h1 class="font-anton text-5xl sm:text-6xl text-[#191919]">Everyone Is an AI Expert Until You Ask Them to Build Something</h1>
+
+                    <div class="space-y-6 text-lg leading-relaxed text-neutral-800">
+                        <p id="ed4-dirtydata"><strong>AI Cannot Clean Up an Organization That Refuses to Get Organized:</strong> Everyone wants agents and automations. Nobody wants to hear that their CRM data is dirty. Before you automate the work, you need to understand the work. <span onclick="jumpToSubstack(5, 'ed5-dysfunction')" class="substack-link">🔗 Sets up "Don't Automate the Dysfunction" in #5 ➔</span></p>
+                        <p id="ed4-aimaxxing"><strong>Touching the Ball — Launching AI Maxxing:</strong> You don't get good at AI by sitting through another keynote. That is why Joan Nguyen and I created <strong>AI Maxxing</strong>. <span onclick="jumpToSubstack(5, 'ed5-opening')" class="substack-link">🔗 Edition #5 opens right inside this AI Maxxing cohort! ➔</span></p>
+                    </div>
+                </article>
+
+                <!-- ===================================================== -->
+                <!-- EDITION #5: PRIMARY DELIVERABLE (POP + MINIMALIST)    -->
+                <!-- ===================================================== -->
+                <article id="substack-ed-5" class="substack-article space-y-12">
+                    <div class="flex flex-wrap justify-between items-center border-b border-neutral-200 pb-6 gap-4">
+                        <div class="flex items-center gap-4">
+                            <button onclick="selectSubstackEdition(4)" class="substack-link">⬅ Prev: Edition #4</button>
+                            <span class="bg-[#1434CB] text-white font-now-label text-[11px] px-4 py-1.5">★ DELIVERABLE 1.1 • 642 WORDS</span>
+                        </div>
+                        <button onclick="toggleXRay()" class="bg-[#F0EFE6] text-[#191919] hover:bg-[#191919] hover:text-white font-now-label text-[11px] px-5 py-2 transition">
+                            🔬 TOGGLE "VOICE &amp; ARCHIVE X-RAY"
+                        </button>
+                    </div>
+
+                    <div id="substack-body" class="space-y-8">
+                        <div class="space-y-4">
+                            <h1 class="font-anton text-5xl sm:text-7xl text-[#191919] leading-none">
+                                AI MADE EXECUTION CHEAP. THAT JUST MADE YOUR TASTE VERY EXPENSIVE.
+                            </h1>
+                            <p class="text-xl sm:text-2xl text-neutral-500 font-light">
+                                Why the next wave of company building isn’t an engineering problem—it’s a judgment problem.
+                            </p>
+                        </div>
+
+                        <!-- Author Bar -->
+                        <div class="flex items-center justify-between py-5 border-y border-neutral-200">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 bg-[#1434CB] text-white flex items-center justify-center font-bold text-sm">MM</div>
+                                <div>
+                                    <p class="font-now-label text-xs text-[#191919]">MOJ MAHDARA</p>
+                                    <p class="text-xs text-neutral-400">OCT 2026 • DIRECT SEQUEL TO EDITIONS #1–#4</p>
+                                </div>
+                            </div>
+                            <!-- Brandbook Color Combination Accent -->
+                            <div class="w-10 h-10 bg-[#F47300] flex items-end justify-end p-1.5">
+                                <div class="w-3.5 h-3.5 bg-[#1434CB]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Pop-Art Editorial Hero Banner Inside Substack #5 -->
+                        <div class="grid md:grid-cols-12 bg-[#F0EFE6] overflow-hidden border border-neutral-200">
+                            <div class="md:col-span-6 relative h-72 md:h-auto overflow-hidden">
+                                <!-- [IMG-01] Replace with Lovable Prompt #1 -->
+                                <img src="/__l5e/assets-v1/f9db1b1d-b42a-400c-85cc-b499dee53382/moj_stockholm.png" 
+                                     alt="Moj Morning Drive" 
+                                     class="w-full h-full object-cover grayscale contrast-125" />
+                                <div class="absolute bottom-0 left-0 bg-[#00A5B5]/90 text-white px-5 py-3">
+                                    <span class="font-now-label text-[10px]">FROM THE DOME // REAL-TIME AUDIT</span>
+                                </div>
+                            </div>
+                            <div class="md:col-span-6 p-8 md:p-10 flex flex-col justify-between bg-[#F47300] text-[#F0EFE6]">
+                                <span class="font-now-label text-[11px] text-white/80">WHAT YOU THINK YOU SEE VS. WHAT IT REALLY IS</span>
+                                <p class="font-anton text-3xl sm:text-4xl leading-none my-6">
+                                    "WE SOLVED THE EXECUTION BOTTLENECK. AND WALKED STRAIGHT INTO A JUDGMENT BOTTLENECK."
+                                </p>
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-3 h-3 rounded-full bg-[#1434CB]"></span>
+                                    <span class="w-3 h-3 rounded-full bg-[#F5C400]"></span>
+                                    <span class="text-xs font-light text-white/90 pl-2">Morning drive between Lovable kickoff &amp; Kinship reviews</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Clean, Airy Essay Body (Plus Jakarta Sans / 'Now' 18px with Generous Line-Height) -->
+                        <div class="space-y-7 text-[18px] leading-[1.85] text-neutral-800 font-normal pt-4">
+                            <p id="ed5-opening" class="xray-voice">
+                                Friday morning. My eyes are dry, my back is freezing up again, and I’m driving to my doctor to get steroid shots before a Lovable kickoff, a zillion back-to-back meetings, and an afternoon check-in with Gwyneth.
+                                <span class="xray-tag bg-[#F47300] text-white">Archival Source: Raw Car Video (WhatsApp Feb 6)</span>
+                            </p>
+
+                            <p class="xray-ecosystem">
+                                In the middle of all that, I’ve been watching what’s happening inside our first cohort of <span onclick="jumpToSubstack(4, 'ed4-aimaxxing')" class="substack-link">AI Maxxing (Substack #4)</span>. Founders, operators, and executives are building things in forty-five minutes that used to take a product team three weeks. They are spinning up internal dashboards before their coffee cools, connecting Claude to messy data rooms, and shipping real workflows with their hands on the keyboard.
+                                <span class="xray-tag bg-[#1434CB] text-white">Continuity: Picks up right inside Substack #4's cohort</span>
+                            </p>
+
+                            <p>It is exhilarating. And it is exposing a completely new problem.</p>
+
+                            <p id="ed5-friction">When building something took six months and two hundred thousand dollars, friction acted as a natural filter. You had to argue about the idea. You had to defend the budget. You had to be reasonably sure the thing was worth existing before anyone wrote a line of code. <span onclick="jumpToSubstack(1, 'ed1-wipeout')" class="substack-link">Ref: Building Right (#1)</span></p>
+
+                            <p class="font-bold text-[#191919] text-xl">Today, the friction is gone.</p>
+
+                            <p>Anyone on your team can turn a half-baked thought into a functioning prototype, a twenty-page strategy doc, or a fifty-piece content calendar by lunch.</p>
+
+                            <p class="xray-voice font-bold text-[#1434CB] text-xl">
+                                We solved the execution bottleneck. And in doing so, we walked straight into a judgment bottleneck.
+                                <span class="xray-tag bg-[#F47300] text-white">Moj Cadence: Short Pivot</span>
+                            </p>
+
+                            <h3 class="font-anton text-3xl sm:text-4xl pt-8 text-[#191919]">VELOCITY WITHOUT DIRECTION IS JUST EXPENSIVE NOISE</h3>
+
+                            <p>I was reviewing an operating update from a founder recently. Their team was proud of how fast they were moving with AI. They had automated their outreach, launched three new landing pages, and generated weeks of social assets in forty-eight hours.</p>
+
+                            <p>I asked one basic question: <em>“What happened to conversion?”</em></p>
+
+                            <p class="font-bold text-[#191919]">Silence.</p>
+
+                            <p>They had mistaken activity for progress. Because the tools made it effortless to produce, nobody stopped to ask whether the underlying point of view was actually sharp enough to care about.</p>
+
+                            <p>There is a name for what I’m seeing across companies right now.</p>
+
+                            <!-- Signature Dictionary Card (Minimalist + Pop Accent) -->
+                            <div id="ed5-dict" class="xray-lexicon my-12 bg-[#F0EFE6] border-l-8 border-[#1434CB] p-8 sm:p-10 relative">
+                                <div class="absolute top-6 right-6 w-8 h-8 bg-[#C80046] flex items-end justify-end p-1">
+                                    <div class="w-3 h-3 bg-[#F5C400]"></div>
+                                </div>
+                                <span class="xray-tag bg-[#C80046] text-white mb-3">Signature Device: Substack #2 &amp; #3 Lexicon Format</span>
+                                <p class="text-3xl font-extrabold text-[#191919] tracking-tight">
+                                    synthetic momentum <span class="text-base font-normal text-[#1434CB] ml-2">| sin-ˈthe-tik mō-ˈmen-təm | noun</span>
+                                </p>
+                                <p class="mt-4 text-lg text-neutral-800 leading-relaxed">
+                                    The illusion of operational progress created when a team uses AI to multiply output—dashboards, decks, workflows, and copy—without making a single hard strategic decision.
+                                </p>
+                                <ul class="mt-5 space-y-3 text-base text-neutral-700">
+                                    <li>• <strong>Characterized by:</strong> pristine Notion databases nobody reads, automated emails nobody replies to, and the specific exhaustion of a team reviewing ten times more work than they did in 2024 while revenue stays flat.</li>
+                                    <li>• <strong>Often misdiagnosed as:</strong> "Founder Mode" or high productivity.</li>
+                                    <li>• <strong>The actual fix:</strong> human curation, ruthless elimination, and a leader who knows what to throw in the trash.</li>
+                                    <li class="text-xs font-now-label text-neutral-500 pt-4 flex flex-wrap gap-2 items-center">
+                                        <span>SEE ALSO:</span>
+                                        <span onclick="jumpToSubstack(2, 'ed2-dict')" class="substack-link">cognitive debt (#2)</span>
+                                        <span onclick="jumpToSubstack(3, 'ed3-dict')" class="substack-link">context shifting (#3)</span>
+                                        <span onclick="jumpToSubstack(4, 'ed4-dirtydata')" class="substack-link">dirty data (#4)</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h3 id="ed5-dysfunction" class="font-anton text-3xl sm:text-4xl pt-6 text-[#191919]">FAILURE IS A DATA POINT. DON’T AUTOMATE THE DYSFUNCTION.</h3>
+
+                            <p id="ed5-failure" class="xray-voice">
+                                People who know me know that failure actually turns me on a little bit—because it means I’m learning something. Every time a project fails, it gives us a data point. It’s one less thing I have to wonder about. <em>Is this the right way? No. Great. Now we try the next way.</em>
+                                <span class="xray-tag bg-[#F47300] text-white">Verbatim Quote: S2E5 @ 02:01 &amp; Riverside Jul 3 @ 00:06</span>
+                            </p>
+
+                            <p class="xray-voice">
+                                The process of elimination is my favorite tool in business. Look at our own internal projects over the past year—from SEO to how we structure content. You blow through what doesn't work, depersonalize the dysfunction, and iterate until you find the signal.
+                                <span class="xray-tag bg-[#F47300] text-white">Verbatim Quote: Riverside Jul 3 @ 00:02 &amp; 00:33</span>
+                            </p>
+
+                            <p>The danger with AI right now is that instead of using it to test and eliminate bad ideas faster, teams are using it to scale their existing confusion.</p>
+
+                            <p id="ed5-kinship" class="xray-ecosystem">
+                                The founders who are winning—the ones we back at <span onclick="jumpToSubstack(1, 'ed1-origin')" class="substack-link">Kinship (#1)</span> and the operators I respect most—use AI to compress the grunt work so they can spend more time on the one thing an LLM cannot replicate: <span onclick="jumpToSubstack(2, 'ed2-pillars')" id="ed5-taste" class="substack-link">taste (Edition #2)</span>.
+                            </p>
+
+                            <p>And taste isn’t which font you pick in Figma. Taste is pattern recognition earned through scars. It’s reading the room when a deal is going sideways. It’s having a point of view specific enough that your audience feels a human being behind the screen before they finish the first sentence.</p>
+
+                            <h3 class="font-anton text-3xl sm:text-4xl pt-6 text-[#191919]">EDIT HARDER THAN YOU PROMPT</h3>
+
+                            <p>If AI gives you eighty percent of the baseline in ten seconds, your job is no longer to be a factory. Your job is to be the Editor-in-Chief.</p>
+
+                            <p id="ed5-inspect" class="xray-voice font-bold text-[#191919]">
+                                Remember: <span onclick="jumpToSubstack(2, 'ed2-inspect')" class="substack-link">What you don’t inspect, people don’t respect (#2)</span>. And if you let an algorithm make your judgment calls, your audience will feel it before your metrics show it.
+                            </p>
+
+                            <p>Use the machines for speed. Keep your hands on the steering wheel for meaning.</p>
+
+                            <p>I’ll keep telling you what I find.</p>
+
+                            <p class="font-extrabold text-2xl pt-4 text-[#1434CB]">Moj</p>
+
+                            <div class="border-t border-neutral-200 pt-8 mt-8 text-base text-neutral-500 space-y-2">
+                                <p class="font-semibold text-[#191919]">☑ Share this with someone who’s ready to move differently.</p>
+                                <p><strong>I’m curious:</strong> Where in your business are you confusing more output with real progress? Reply in the comments—I read all of them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 02: PART 1.2 — TWO INSTAGRAM PIECES (SPACIOUS SCROLL) -->
+        <!-- ============================================================= -->
+        <div id="uni-2" class="universe-panel">
+
+            <!-- MODULE 2A: SPACIOUS MINIMALIST INTRO -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center space-y-6">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="w-6 h-6 bg-[#F47300] flex items-end justify-end p-1">
+                        <div class="w-2.5 h-2.5 bg-[#1434CB]"></div>
+                    </div>
+                    <span class="font-now-label text-xs text-[#F47300]">PART 1.2 // MULTI-FORMAT SOCIAL TRANSLATION</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-6xl text-[#1434CB] tracking-wider uppercase leading-tight">
+                    <span class="font-light">FROM SUBSTACK TO</span> <span class="font-extrabold">SOCIAL BRAND</span>
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-neutral-600 text-lg md:text-xl font-light leading-relaxed">
+                    Great founder content doesn't copy-paste a newsletter onto Instagram—it translates the thesis into two distinct native behaviors: <strong>High-Save Visual Frameworks (Carousel)</strong> and <strong>High-Retention Raw Proof (Archival Reel)</strong>.
+                </p>
+            </section>
+
+            <!-- MODULE 2B: PIECE 01 — THE 3-SLIDE CAROUSEL (FULL-WIDTH PRESENTATION) -->
+            <section class="bg-[#F0EFE6] py-24 px-6 border-y border-neutral-200">
+                <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-14 items-center">
+                    
+                    <!-- Left Column: Strategic Pitch & Slide Controls -->
+                    <div class="lg:col-span-6 space-y-8">
+                        <div class="space-y-3">
+                            <span class="font-now-label text-xs text-[#1434CB]">DELIVERABLE 1.2A // MAXIMUM 3 SLIDES</span>
+                            <h3 class="font-anton text-4xl sm:text-5xl text-[#191919]">PIECE 01: THE 3-SLIDE FRAMEWORK CAROUSEL</h3>
+                            <p class="text-neutral-600 text-base leading-relaxed">
+                                Built using the exact visual language of the <strong>MOJ Brandbook 2025</strong>: Slide 1 hooks with the search-bar overlay and pop-art color block; Slide 2 isolates the <em>Synthetic Momentum</em> lexicon card for Story reshares; Slide 3 delivers the orange "What You Think You See vs. What It Really Is" comparison.
+                            </p>
+                        </div>
+
+                        <!-- Interactive Slide Switcher -->
+                        <div class="flex space-x-3">
+                            <button onclick="switchSlide(1)" id="slide-btn-1" class="px-6 py-3 bg-[#1434CB] text-white font-now-label text-xs shadow-sm transition">SLIDE 01 // HOOK</button>
+                            <button onclick="switchSlide(2)" id="slide-btn-2" class="px-6 py-3 bg-white text-[#191919] border border-neutral-300 font-now-label text-xs transition">SLIDE 02 // LEXICON</button>
+                            <button onclick="switchSlide(3)" id="slide-btn-3" class="px-6 py-3 bg-white text-[#191919] border border-neutral-300 font-now-label text-xs transition">SLIDE 03 // MATRIX</button>
+                        </div>
+
+                        <!-- Caption & Creative Direction Box -->
+                        <div class="bg-white p-8 border border-neutral-200 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-now-label text-xs text-[#1434CB]">INSTAGRAM CAPTION + HOOK</span>
+                                <span class="w-4 h-4 bg-[#F5C400]"></span>
+                            </div>
+                            <p class="text-neutral-800 text-sm leading-relaxed">
+                                "Everyone is bragging about how fast their team is shipping with AI right now. Almost nobody is asking if any of it is actually converting. When building took 6 months and $200k, friction was a natural filter. Now that anyone can spin up a dashboard in Lovable or a 20-page strategy doc in Claude before lunch, the execution bottleneck is gone. Welcome to the judgment bottleneck. I’m calling this trap <strong>Synthetic Momentum</strong>... Full breakdown live on Substack (link in bio). Where are you confusing activity with leverage right now? 👇"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: 4:5 Carousel Interactive Canvas -->
+                    <div class="lg:col-span-6">
+                        <div class="max-w-md mx-auto aspect-[4/5] bg-white shadow-2xl border border-neutral-200 relative overflow-hidden">
+
+                            <!-- SLIDE 1: POP-ART PHOTO + TEAL BLOCK -->
+                            <div id="ig-slide-1" class="w-full h-full bg-[#191919] p-8 flex flex-col justify-between relative">
+                                <img src="/__l5e/assets-v1/f9db1b1d-b42a-400c-85cc-b499dee53382/moj_stockholm.png"
+                                     alt="Moj Driving Slide 1"
+                                     class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-75" />
+                                <!-- Pop Orange Half-Circle Accent -->
+                                <div class="absolute -right-16 top-1/4 w-64 h-64 rounded-full bg-[#F47300]/80 mix-blend-screen pointer-events-none"></div>
+
+                                <div class="relative z-10 bg-white text-[#191919] rounded-full px-4 py-2 text-xs font-medium flex items-center space-x-2 shadow-md w-fit mx-auto mt-2">
+                                    <span>🔍</span>
+                                    <span>how to 10x team productivity with AI</span>
+                                </div>
+
+                                <div class="relative z-10 space-y-3 text-left">
+                                    <div class="bg-[#00A5B5] p-6">
+                                        <p class="font-anton text-4xl text-white leading-none">AI MADE EXECUTION CHEAP.</p>
+                                        <p class="font-anton text-2xl text-[#F5C400] leading-tight mt-2">THAT JUST MADE YOUR TASTE VERY EXPENSIVE.</p>
+                                    </div>
+                                    <div class="flex justify-between items-center pt-1 text-[11px] font-now-label text-white">
+                                        <span>MOJ MAHDARA</span>
+                                        <span>SWIPE ➔</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 2: MINIMALIST LEXICON CARD -->
+                            <div id="ig-slide-2" class="hidden w-full h-full bg-white text-[#191919] p-8 flex flex-col justify-between relative">
+                                <div class="flex justify-between items-start">
+                                    <span class="bg-[#1434CB] text-white font-now-label text-[10px] px-3 py-1.5">THE MOJ LEXICON // 02</span>
+                                    <div class="w-8 h-8 bg-[#C80046] flex items-end justify-end p-1">
+                                        <div class="w-3 h-3 bg-[#F5C400]"></div>
+                                    </div>
+                                </div>
+
+                                <div class="my-auto space-y-4 text-left border-y border-neutral-200 py-6">
+                                    <h4 class="text-3xl font-extrabold text-[#1434CB] tracking-tight">synthetic momentum</h4>
+                                    <p class="text-xs text-neutral-400 font-semibold tracking-widest uppercase">| sin-ˈthe-tik mō-ˈmen-təm | noun</p>
+                                    <p class="text-sm leading-relaxed text-neutral-800">
+                                        The illusion of operational progress created when a team uses AI to multiply output—dashboards, decks, workflows, and copy—without making a single hard strategic decision.
+                                    </p>
+                                    <div class="bg-[#F0EFE6] p-4 text-xs space-y-1.5 border-l-4 border-[#F47300]">
+                                        <p><strong class="text-[#C80046]">MISDIAGNOSED AS:</strong> "Founder Mode" or moving fast.</p>
+                                        <p><strong class="text-[#1434CB]">THE ACTUAL FIX:</strong> Human curation &amp; treating failure as a data point.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between items-center text-[11px] font-now-label text-neutral-400">
+                                    <span>@MOJMAHDARA</span>
+                                    <span>02 / 03 ➔</span>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 3: BRANDBOOK ORANGE SLIDE ("WHAT YOU THINK YOU SEE VS WHAT IT REALLY IS") -->
+                            <div id="ig-slide-3" class="hidden w-full h-full bg-[#F47300] text-[#F0EFE6] p-8 flex flex-col justify-between relative">
+                                <div>
+                                    <span class="text-[10px] font-now-label text-white/80">OPERATIONAL AUDIT</span>
+                                    <h4 class="font-anton text-3xl text-[#F0EFE6] mt-1 leading-none">WHAT YOU THINK YOU SEE VS. WHAT IT REALLY IS</h4>
+                                </div>
+
+                                <div class="space-y-3 my-auto text-xs">
+                                    <div class="bg-[#191919] text-white p-4">
+                                        <p class="font-now-label text-[#F5C400] text-[10px] mb-1">✕ SYNTHETIC MOMENTUM (FACTORY)</p>
+                                        <p class="text-neutral-200">• 50 AI assets by lunch, zero conversion lift</p>
+                                        <p class="text-neutral-200">• Automating broken workflows &amp; dirty CRM data</p>
+                                    </div>
+                                    <div class="bg-white text-[#191919] p-4">
+                                        <p class="font-now-label text-[#1434CB] text-[10px] mb-1">✓ REAL LEVERAGE (EDITOR-IN-CHIEF)</p>
+                                        <p class="text-neutral-700">• AI compresses 80% of baseline grunt work</p>
+                                        <p class="text-neutral-700">• Taste &amp; pattern recognition earned through scars</p>
+                                    </div>
+                                </div>
+
+                                <!-- Brandbook Abacus Dots at Bottom -->
+                                <div class="space-y-2 pt-2">
+                                    <div class="flex items-center justify-between border-t-2 border-[#1434CB] pt-2">
+                                        <div class="flex space-x-1">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#1434CB]"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#1434CB]"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#1434CB]"></span>
+                                        </div>
+                                        <span class="font-now-label text-[10px] text-white">WHAT YOU DON'T INSPECT, PEOPLE DON'T RESPECT</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- MODULE 2C: PIECE 02 — THE 25-SECOND ARCHIVAL REEL (SPACIOUS WHITE STAGE) -->
+            <section class="max-w-6xl mx-auto px-6 py-24 md:py-32 grid lg:grid-cols-12 gap-14 items-center">
+                
+                <!-- Left Column: 9:16 Vertical Reel Player + Pop Outline Aesthetics -->
+                <div class="lg:col-span-5">
+                    <div class="max-w-[290px] mx-auto aspect-[9/16] bg-[#1434CB] p-5 shadow-2xl relative flex flex-col justify-between text-white border-4 border-[#191919]">
+                        <video id="moj-reel-video" class="hidden absolute inset-0 w-full h-full object-cover z-20" controls playsinline></video>
+                        <iframe id="moj-reel-iframe" class="hidden absolute inset-0 w-full h-full z-20" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+                        <div id="moj-reel-placeholder" class="flex flex-col justify-between h-full z-10">
+                            <div class="bg-white text-[#191919] text-[10px] px-3 py-1.5 rounded-full font-semibold text-center shadow">
+                                🔍 what "founder mode" actually looks like
+                            </div>
+
+                            <!-- Yellow Pop-Outline Frame Preview -->
+                            <div class="my-auto text-center space-y-4 bg-[#191919] p-5 border-2 border-[#F5C400]">
+                                <span class="font-now-label text-[10px] text-[#F5C400]" id="moj-beat-badge">REEL 00:00–00:05</span>
+                                <p class="font-anton text-2xl text-white leading-tight" id="moj-beat-text">"WHAT FOUNDER MODE ACTUALLY LOOKS LIKE"</p>
+                                <p class="text-[11px] text-[#9CE8D8] font-medium" id="moj-beat-source">Real uploaded car footage • Editorial caption</p>
+                            </div>
+
+                            <div class="text-[10px] font-now-label text-[#F5C400] text-center">
+                                CLICK ANY BEAT ON THE RIGHT TO PREVIEW
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Reel Strategy, Plug & Play Loader & 5-Beat Breakdown -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="space-y-3">
+                        <span class="font-now-label text-xs text-[#00A5B5]">DELIVERABLE 1.2B // VERTICAL REEL</span>
+                        <h3 class="font-anton text-4xl sm:text-5xl text-[#191919]">PIECE 02: 25-SECOND ARCHIVAL REEL</h3>
+                        <p class="text-neutral-600 text-base leading-relaxed">
+                            A five-beat example combining Moj’s real uploaded clips with generated illustrative cutaways. Missing interview lines are presented as editorial text, not recreated speech.
+                        </p>
+                    </div>
+
+                    <!-- Plug & Play Video Input -->
+                    <div class="bg-[#F0EFE6] p-4 flex flex-col sm:flex-row gap-3 border border-neutral-200">
+                        <input id="moj-reel-url-input" type="text" placeholder="Paste Moj 25s Reel URL (.mp4, Google Drive, Loom)..." 
+                               class="flex-1 bg-white text-[#191919] text-xs px-4 py-3 border border-neutral-300 focus:outline-none focus:border-[#1434CB]" />
+                        <button onclick="embedCustomVideo('moj-reel')" class="bg-[#1434CB] text-white font-now-label text-xs px-6 py-3 hover:bg-[#191919] transition">
+                            LOAD REEL VIDEO
+                        </button>
+                    </div>
+
+                    <!-- Interactive 5-Beat Storyboard -->
+                    <!-- IN SECTION 02 (PIECE B: MOJ 25s IG REEL) -->
+<div class="space-y-2 text-xs">
+<div class="reel-beat" role="button" tabindex="0" onclick="previewMojReelBeat(&#x27;REEL 00:00–00:05&#x27;, &#x27;WHAT FOUNDER MODE ACTUALLY LOOKS LIKE&#x27;, &#x27;Real uploaded car footage opens the example. The editorial hook appears as text; the missing WhatsApp speech is not recreated.&#x27;)"><strong>BEAT 1 (REEL 00:00–00:05) // RAW HOOK:</strong><p>WHAT FOUNDER MODE ACTUALLY LOOKS LIKE</p><p>Real uploaded car footage opens the example. The editorial hook appears as text; the missing WhatsApp speech is not recreated.</p></div>
+<div class="reel-beat" role="button" tabindex="0" onclick="previewMojReelBeat(&#x27;REEL 00:05–00:07&#x27;, &#x27;MORE AI OUTPUT ≠ PROGRESS.&#x27;, &#x27;A hard cut to the final magazine flip in IMG_0387_1.mp4 interrupts the rhythm. The message is an editorial caption, not a transcribed quote.&#x27;)"><strong>BEAT 2 (REEL 00:05–00:07) // INTERRUPT:</strong><p>MORE AI OUTPUT ≠ PROGRESS.</p><p>A hard cut to the final magazine flip in IMG_0387_1.mp4 interrupts the rhythm. The message is an editorial caption, not a transcribed quote.</p></div>
+<div class="reel-beat" role="button" tabindex="0" onclick="previewMojReelBeat(&#x27;REEL 00:07–00:14&#x27;, &#x27;FAILURE IS GIVING US A DATA POINT.&#x27;, &#x27;A generated notebook cutaway illustrates experimentation, with “DEPERSONALIZE THE DYSFUNCTION.” and the data-point message as text. No Riverside voice is fabricated.&#x27;)"><strong>BEAT 3 (REEL 00:07–00:14) // INSIGHT:</strong><p>FAILURE IS GIVING US A DATA POINT.</p><p>A generated notebook cutaway illustrates experimentation, with “DEPERSONALIZE THE DYSFUNCTION.” and the data-point message as text. No Riverside voice is fabricated.</p></div>
+<div class="reel-beat" role="button" tabindex="0" onclick="previewMojReelBeat(&#x27;REEL 00:14–00:21&#x27;, &#x27;LEARN. RESET. BUILD.&#x27;, &#x27;The real photo shoot, car moment and magazine footage create a human montage. Generated paper details bridge the cuts; the missing interview audio is not recreated.&#x27;)"><strong>BEAT 4 (REEL 00:14–00:21) // MONTAGE:</strong><p>LEARN. RESET. BUILD.</p><p>The real photo shoot, car moment and magazine footage create a human montage. Generated paper details bridge the cuts; the missing interview audio is not recreated.</p></div>
+<div class="reel-beat" role="button" tabindex="0" onclick="previewMojReelBeat(&#x27;REEL 00:21–00:25&#x27;, &#x27;THE PROCESS OF ELIMINATION IS MY FAVORITE.&#x27;, &#x27;A generated route-card cutaway closes the example with the original editorial punchline as text, not simulated speech or a real-office claim.&#x27;)"><strong>BEAT 5 (REEL 00:21–00:25) // PUNCHLINE:</strong><p>THE PROCESS OF ELIMINATION IS MY FAVORITE.</p><p>A generated route-card cutaway closes the example with the original editorial punchline as text, not simulated speech or a real-office claim.</p></div>
+</div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 03: PART 2.1 — TALENT SHORTLIST (POP + FULL COLOR)    -->
+        <!-- ============================================================= -->
+        <div id="uni-3" class="universe-panel">
+
+            <!-- MODULE 3A: SPACIOUS MINIMALIST INTRO -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center space-y-6">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="w-6 h-6 bg-[#C80046] flex items-end justify-end p-1">
+                        <div class="w-2.5 h-2.5 bg-[#9CE8D8]"></div>
+                    </div>
+                    <span class="font-now-label text-xs text-[#C80046]">PART 2.1 // TALENT SHORTLIST &amp; CULTURAL RESEARCH</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-6xl text-[#1434CB] tracking-wider uppercase leading-tight">
+                    <span class="font-light">LONGEVITY 40+</span> <span class="font-extrabold">CASTING BOARD</span>
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-neutral-600 text-lg md:text-xl font-light leading-relaxed">
+                    2 Women (40+) and 2 Men (45+) selected for cultural fluency, lived credibility, and high-trust social conversion. Each talent dossier pairs <strong>1 Pop-Art Editorial Portrait</strong> with <strong>2 Full-Color Candid Lifestyle Moments</strong>.
+                </p>
+
+                <!-- Filter Buttons -->
+                <div class="flex justify-center space-x-3 pt-4">
+                    <button onclick="filterTalent('all')" class="px-6 py-2.5 bg-[#191919] text-white font-now-label text-xs">ALL 4 TALENTS</button>
+                    <button onclick="filterTalent('women')" class="px-6 py-2.5 bg-[#F0EFE6] text-[#191919] hover:bg-[#C80046] hover:text-white font-now-label text-xs transition">WOMEN 40+ (2)</button>
+                    <button onclick="filterTalent('men')" class="px-6 py-2.5 bg-[#F0EFE6] text-[#191919] hover:bg-[#1434CB] hover:text-white font-now-label text-xs transition">MEN 45+ (2)</button>
+                </div>
+            </section>
+
+            <!-- MODULE 3B: FULL-SCROLL TALENT DOSSIERS -->
+            <section class="max-w-6xl mx-auto px-6 pb-32 space-y-24">
+
+                <!-- ===================================================== -->
+                <!-- DOSSIER 01: KATIE STURINO (SELECTED LEAD)             -->
+                <!-- ===================================================== -->
+                <div class="talent-card women bg-white border-2 border-[#1434CB] p-8 sm:p-14 shadow-sm space-y-12">
+                    <div class="flex flex-wrap justify-between items-start gap-6 border-b border-neutral-200 pb-8">
+                        <div class="space-y-2">
+                            <div class="inline-flex items-center space-x-2 bg-[#1434CB] text-white px-3.5 py-1 text-[11px] font-now-label">
+                                <span>★ SELECTED CAMPAIGN LEAD • WOMEN 40+ TERRITORY</span>
+                            </div>
+                            <h3 class="font-anton text-5xl text-[#191919] pt-1">01. KATIE STURINO (AGE 43)</h3>
+                            <p class="font-now-label text-xs text-neutral-400">@KATIESTURINO • 850K+ IG / 300K+ TIKTOK • FOUNDER OF MEGABABE &amp; AUTHOR</p>
+                        </div>
+                        <div class="bg-[#F0EFE6] border-l-4 border-[#F47300] px-5 py-3 max-w-sm">
+                            <p class="font-now-label text-[10px] text-[#F47300]">ARCHIVAL DISCOVERY RECEIPT</p>
+                            <p class="text-xs text-neutral-700 mt-1">Discovered at minute <strong>20:20</strong> of Moj's raw podcast tape (<code>S2E5 - Pre-edited.mp4</code>).</p>
+                        </div>
+                    </div>
+
+                    <!-- 3-Image Triptych: 1 Pop-Art Portrait + 2 Full-Color Lifestyle -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Photo 1: Pop-Art Portrait with Crimson Circle & Yellow Accent -->
+                        <div class="space-y-3">
+                            <div class="h-72 bg-[#F0EFE6] relative overflow-hidden flex items-center justify-center">
+                                <div class="w-48 h-48 rounded-full bg-[#C80046] absolute"></div>
+                                <!-- [IMG-04] Replace with Lovable Prompt #4 -->
+                                <img id="img-katie-1" src="/__l5e/assets-v1/8148d250-380c-43e6-ba66-2d3f1e991fff/katie_pop.jpg" alt="Katie Sturino Pop Portrait" class="relative z-10 w-full h-full object-cover" />
+                                <div class="absolute bottom-3 left-3 bg-[#191919] text-[#F5C400] font-now-label text-[10px] px-2.5 py-1 z-20">01 // POP PORTRAIT (S2E5)</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Archival Anchor:</strong> Direct confession on turning 43 and questioning perimenopause.</p>
+                        </div>
+
+                        <!-- Photo 2: Full-Color Candid Morning Lifestyle -->
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-05] Replace with Lovable Prompt #5 -->
+                                <img id="img-katie-2" src="/__l5e/assets-v1/055f4437-ad6a-4a47-8b9a-4d70c3ed013a/katie_podcast.png" alt="Katie Sturino Full Color Morning" class="w-full h-full object-cover" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">02 // FULL-COLOR CANDID</div>
+                                <div class="absolute top-3 right-3 w-6 h-6 bg-[#1434CB] flex items-end justify-end p-1">
+                                    <div class="w-2 h-2 bg-[#F47300]"></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Natural Social Format:</strong> Unfiltered morning kitchen-counter truth-telling Reels.</p>
+                        </div>
+
+                        <!-- Photo 3: Full-Color Operator Mode -->
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-06] Replace with Lovable Prompt #6 -->
+                                <img id="img-katie-3" src="/__l5e/assets-v1/86269bfc-7604-41e8-9a2f-affe996ea95f/katie_studio.png" alt="Katie Sturino Operator Mode" class="w-full h-full object-cover" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">03 // MEGABABE HQ COLOR</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Founder Authority:</strong> Built a category-defining CPG brand solving taboo body friction.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4 Spacious Strategic Criteria Cards -->
+                    <div class="grid md:grid-cols-2 gap-8 pt-4">
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#1434CB] space-y-2">
+                            <p class="font-now-label text-xs text-[#1434CB]">01 // WHY RELEVANT TO BRAND, AUDIENCE &amp; MOMENT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Katie built a multimillion-dollar CPG brand (Megababe) by naming the taboo physical discomforts women are conditioned to hide. Women 40+ are done suffering in silence through perimenopause—they want biological receipts.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#F47300] space-y-2">
+                            <p class="font-now-label text-xs text-[#F47300]">02 // CREDIBILITY: PERSONALITY, STORY &amp; CONTENT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">In Moj’s raw podcast footage (<code>S2E5 - Pre-edited.mp4</code> at <code>20:18–20:59</code>), Katie explicitly confesses turning 43, questioning perimenopause, and unlearning how women are trained to "swallow physical pain."</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#00A5B5] space-y-2">
+                            <p class="font-now-label text-xs text-[#00A5B5]">03 // NATURAL TERRITORY &amp; SOCIAL FORMAT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed"><strong>Territory:</strong> Women 40+ challenging the idea that feeling terrible is just part of getting older. <strong>Format:</strong> Unfiltered face-to-camera bathroom/kitchen counter rants and truth-telling Reels.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#C80046] space-y-2">
+                            <p class="font-now-label text-xs text-[#C80046]">04 // REPUTATIONAL, BRAND-SAFETY &amp; AUDIENCE-FIT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Exceptional trust with female decision-makers 35–55. Note: Her voice is candid and unapologetic—the brand must embrace her directness rather than scripting clinical jargon.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================================================== -->
+                <!-- DOSSIER 02: JENNA LYONS                               -->
+                <!-- ===================================================== -->
+                <div class="talent-card women bg-white border border-neutral-200 p-8 sm:p-14 shadow-sm space-y-12">
+                    <div class="flex flex-wrap justify-between items-start gap-6 border-b border-neutral-200 pb-8">
+                        <div class="space-y-2">
+                            <span class="bg-[#F0EFE6] text-[#191919] px-3.5 py-1 text-[11px] font-now-label">WOMEN 40+ TERRITORY // ASPIRATIONAL REINVENTION</span>
+                            <h3 class="font-anton text-5xl text-[#191919] pt-1">02. JENNA LYONS (AGE 56)</h3>
+                            <p class="font-now-label text-xs text-neutral-400">@JENNALYONSNYC • 630K+ IG • FORMER PRESIDENT OF J.CREW, DESIGNER &amp; ENTREPRENEUR</p>
+                        </div>
+                        <div class="bg-[#F0EFE6] border-l-4 border-[#1434CB] px-5 py-3 max-w-sm">
+                            <p class="font-now-label text-[10px] text-[#1434CB]">ARCHIVAL DISCOVERY RECEIPT</p>
+                            <p class="text-xs text-neutral-700 mt-1">Featured in Moj's <em>"Reclaim the Flag"</em> documentary (minute <strong>23:14</strong>).</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="space-y-3">
+                            <div class="h-72 bg-[#1434CB] relative overflow-hidden">
+                                <!-- [IMG-07] Replace with Lovable Prompt #7 -->
+                                <img id="img-jenna-1" src="/__l5e/assets-v1/a6643cf9-0686-4bf8-b421-a689d8d0493a/jenna_pop.jpg" alt="Jenna Lyons Pop Portrait" class="w-full h-full object-cover" />
+                                <div class="absolute bottom-3 left-3 bg-[#F5C400] text-[#191919] font-now-label text-[10px] px-2.5 py-1">01 // DUOTONE POP PORTRAIT</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Iconic Presence:</strong> Unmistakable eyewear, menswear tailoring, and calm authority.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-08] Replace with Lovable Prompt #8 -->
+                                <img id="img-jenna-2" src="/__l5e/assets-v1/239943cd-02f2-411c-9331-1aab0f0bf768/jenna_sofa.png" alt="Jenna Lyons SoHo Loft" class="w-full h-full object-cover" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">02 // SOHO LOFT COLOR</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Aesthetic World:</strong> Warm architectural luxury that elevates clinical longevity.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-09] Replace with Lovable Prompt #9 -->
+                                <img id="img-jenna-3" src="/__l5e/assets-v1/c7200eb7-05e1-4634-b7b4-1306b5b93927/jenna_close.png" alt="Jenna Lyons Studio" class="w-full h-full object-cover" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">03 // SECOND-ACT OPERATOR</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Midlife Reinvention:</strong> Thriving across multiple chapters after 50.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 pt-4">
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#1434CB] space-y-2">
+                            <p class="font-now-label text-xs text-[#1434CB]">01 // WHY RELEVANT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Embodies aspirational reinvention after 50—making longevity look like an upgrade in taste, power, and self-possession rather than a clinical fight against time.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#F47300] space-y-2">
+                            <p class="font-now-label text-xs text-[#F47300]">02 // CREDIBILITY</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Openly navigated a lifelong genetic condition (incontinentia pigmenti), major career pivots, and midlife vitality in the public eye with candor.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#00A5B5] space-y-2">
+                            <p class="font-now-label text-xs text-[#00A5B5]">03 // NATURAL TERRITORY &amp; FORMAT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Women 40+ aging on your own terms. Format: SoHo apartment "Get Ready With Me" Reels pairing menswear styling with internal biomarker check-ins.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#C80046] space-y-2">
+                            <p class="font-now-label text-xs text-[#C80046]">04 // REPUTATIONAL &amp; AUDIENCE-FIT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">High brand safety; skews toward an affluent, design-forward demographic that matches a premium physician-supported price point.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================================================== -->
+                <!-- DOSSIER 03: TONY HAWK                                 -->
+                <!-- ===================================================== -->
+                <div class="talent-card men bg-white border border-neutral-200 p-8 sm:p-14 shadow-sm space-y-12">
+                    <div class="flex flex-wrap justify-between items-start gap-6 border-b border-neutral-200 pb-8">
+                        <div class="space-y-2">
+                            <span class="bg-[#F0EFE6] text-[#191919] px-3.5 py-1 text-[11px] font-now-label">MEN 45+ TERRITORY // UNEXPECTED CULTURAL ICON</span>
+                            <h3 class="font-anton text-5xl text-[#191919] pt-1">03. TONY HAWK (AGE 56)</h3>
+                            <p class="font-now-label text-xs text-neutral-400">@TONYHAWK • 8.7M+ IG / 3.4M+ TIKTOK • SKATEBOARDING PIONEER &amp; ENTREPRENEUR</p>
+                        </div>
+                        <div class="bg-[#F0EFE6] border-l-4 border-[#00A5B5] px-5 py-3 max-w-sm">
+                            <p class="font-now-label text-[10px] text-[#00A5B5]">STRATEGIC CASTING NOTE</p>
+                            <p class="text-xs text-neutral-700 mt-1">Answers the brief's call for an unexpected male figure—zero "biohacker gym-bro" cliché.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="space-y-3">
+                            <div class="h-72 bg-[#F0EFE6] relative overflow-hidden flex items-center justify-center">
+                                <div class="w-48 h-48 rounded-full bg-[#F47300] absolute"></div>
+                                <!-- [IMG-10] Replace with Lovable Prompt #10 -->
+                                <img id="img-tony-1" src="/__l5e/assets-v1/ec9f4753-0321-4376-aebb-b90fc374a945/tony_pop.jpg" alt="Tony Hawk Pop Portrait" class="relative z-10 w-full h-full object-cover object-top" />
+                                <div class="absolute bottom-3 left-3 bg-[#191919] text-white font-now-label text-[10px] px-2.5 py-1 z-20">01 // POP CIRCLE PORTRAIT</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Authentic Longevity:</strong> Unretouched resilience at 56.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-11] Replace with Lovable Prompt #11 -->
+                                <img id="img-tony-2" src="/__l5e/assets-v1/608b7d83-66c0-4111-8401-6668bbc5a8e2/tony_board.png" alt="Tony Hawk Ramp Color" class="w-full h-full object-cover object-top" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">02 // RAMP COMEBACK COLOR</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>The Comeback Story:</strong> Rebuilding from a broken femur in his 50s back to landing 540s.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-12] Replace with Lovable Prompt #12 -->
+                                <img id="img-tony-3" src="/__l5e/assets-v1/29d30ce0-c9dd-404e-aa23-08c5b62311d1/tony_sit.png" alt="Tony Hawk Morning Routine" class="w-full h-full object-cover object-top" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">03 // RECOVERY BIOMARKERS</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Internal Data:</strong> Shifting focus from pure adrenaline to cellular recovery.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 pt-4">
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#1434CB] space-y-2">
+                            <p class="font-now-label text-xs text-[#1434CB]">01 // WHY RELEVANT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Directly answers the brief’s call for "an unexpected but culturally relevant male figure." A childhood hero to Gen X and older Millennials still landing 540s at 56.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#F47300] space-y-2">
+                            <p class="font-now-label text-xs text-[#F47300]">02 // CREDIBILITY</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">After breaking his femur in his 50s and fighting his way back to the ramp, Tony is vocal about recovery, cellular energy, and what changes beneath the surface.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#00A5B5] space-y-2">
+                            <p class="font-now-label text-xs text-[#00A5B5]">03 // NATURAL TERRITORY &amp; FORMAT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Men 45+ comeback story, vitality &amp; recovery. Format: Mini-documentary vertical cuts pairing ramp sessions with internal biomarker tracking.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#C80046] space-y-2">
+                            <p class="font-now-label text-xs text-[#C80046]">04 // REPUTATIONAL &amp; AUDIENCE-FIT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Bulletproof cross-generational trust. Creative must tie his orthopedic comeback to internal hormonal/metabolic baselines.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================================================== -->
+                <!-- DOSSIER 04: ROB MCELHENNEY                            -->
+                <!-- ===================================================== -->
+                <div class="talent-card men bg-white border border-neutral-200 p-8 sm:p-14 shadow-sm space-y-12">
+                    <div class="flex flex-wrap justify-between items-start gap-6 border-b border-neutral-200 pb-8">
+                        <div class="space-y-2">
+                            <span class="bg-[#F0EFE6] text-[#191919] px-3.5 py-1 text-[11px] font-now-label">MEN 45+ TERRITORY // DISARMING CANDOR</span>
+                            <h3 class="font-anton text-5xl text-[#191919] pt-1">04. ROB MCELHENNEY (AGE 47)</h3>
+                            <p class="font-now-label text-xs text-neutral-400">@ROBMCELHENNEY • 2.6M+ IG • CREATOR OF IT'S ALWAYS SUNNY &amp; CO-OWNER OF WREXHAM AFC</p>
+                        </div>
+                        <div class="bg-[#F0EFE6] border-l-4 border-[#C80046] px-5 py-3 max-w-sm">
+                            <p class="font-now-label text-[10px] text-[#C80046]">STRATEGIC CASTING NOTE</p>
+                            <p class="text-xs text-neutral-700 mt-1">Uses self-aware humor to destigmatize hormone &amp; lab testing for skeptical men 45+.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="space-y-3">
+                            <div class="h-72 bg-[#191919] relative overflow-hidden">
+                                <!-- [IMG-13] Replace with Lovable Prompt #13 -->
+                                <img id="img-rob-1" src="/__l5e/assets-v1/eaaaa9d9-6ac3-41e2-a68d-2e80a6041851/rob_pop.jpg" alt="Rob McElhenney Portrait" class="w-full h-full object-cover object-top" />
+                                <div class="absolute bottom-3 left-3 bg-[#00A5B5] text-white font-now-label text-[10px] px-2.5 py-1">01 // OPERATOR POP PORTRAIT</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Showrunner &amp; Founder:</strong> High-output creative and sports executive.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-14] Replace with Lovable Prompt #14 -->
+                                <img id="img-rob-2" src="/__l5e/assets-v1/d31681da-ffaa-4e63-b722-781a4c06ffd8/rob_logs.png" alt="Rob McElhenney Wrexham" class="w-full h-full object-cover object-top" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">02 // WREXHAM PITCH COLOR</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Cultural Reach:</strong> Mainstream credibility with men who ignore traditional wellness ads.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-72 bg-neutral-100 relative overflow-hidden">
+                                <!-- [IMG-15] Replace with Lovable Prompt #15 -->
+                                <img id="img-rob-3" src="/__l5e/assets-v1/88c7e95d-5e17-4dd5-842d-b06557ba1435/rob_studio.png" alt="Rob McElhenney Fitness" class="w-full h-full object-cover object-top" />
+                                <div class="absolute bottom-3 left-3 bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1">03 // TRANSPARENT LABS</div>
+                            </div>
+                            <p class="text-xs text-neutral-500"><strong>Radical Honesty:</strong> Openly credits physician-guided bloodwork over Hollywood myths.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 pt-4">
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#1434CB] space-y-2">
+                            <p class="font-now-label text-xs text-[#1434CB]">01 // WHY RELEVANT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Bridges entertainment, sports ownership, and midlife male candor—speaking to 45+ men who want high energy without corporate clichés.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#F47300] space-y-2">
+                            <p class="font-now-label text-xs text-[#F47300]">02 // CREDIBILITY</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Demystified celebrity fitness by openly discussing physician-guided blood panels, testosterone baselines, and sleep data after 45.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#00A5B5] space-y-2">
+                            <p class="font-now-label text-xs text-[#00A5B5]">03 // NATURAL TERRITORY &amp; FORMAT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Men 45+ open conversations about hormones, aging, and energy. Format: Deadpan face-to-camera monologues between stadium meetings.</p>
+                        </div>
+                        <div class="bg-[#F0EFE6]/60 p-8 border-l-4 border-[#C80046] space-y-2">
+                            <p class="font-now-label text-xs text-[#C80046]">04 // REPUTATIONAL &amp; AUDIENCE-FIT</p>
+                            <p class="text-neutral-800 text-base leading-relaxed">Warm Wrexham-era reputation that converts skeptical 40–55 male audiences who normally ignore wellness ads.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 04: PART 2.2 — CAMPAIGN CONCEPT (SPACIOUS SCROLL)     -->
+        <!-- ============================================================= -->
+        <div id="uni-4" class="universe-panel">
+
+            <!-- MODULE 4A: SPACIOUS MINIMALIST CAMPAIGN HERO -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center space-y-6">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="w-6 h-6 bg-[#1434CB] flex items-end justify-end p-1">
+                        <div class="w-2.5 h-2.5 bg-[#F47300]"></div>
+                    </div>
+                    <span class="font-now-label text-xs text-[#1434CB]">PART 2.2 // SELECTED TALENT CAMPAIGN STRATEGY</span>
+                </div>
+
+                <h2 class="font-anton text-6xl sm:text-8xl text-[#191919] leading-none">
+                    "DONE SWALLOWING IT."
+                </h2>
+
+                <p class="text-xl sm:text-2xl text-[#C80046] font-light max-w-2xl mx-auto">
+                    Tagline: <strong>"Your 40s aren't a symptom to tolerate. Check what's underneath."</strong> — Starring Katie Sturino (43)
+                </p>
+            </section>
+
+            <!-- MODULE 4B: BRANDBOOK ORANGE STATEMENT BANNER -->
+            <section class="bg-[#F47300] text-[#F0EFE6] py-20 px-6">
+                <div class="max-w-4xl mx-auto text-center space-y-8">
+                    <span class="font-now-label text-xs text-white">THE CULTURAL INSIGHT // WHAT YOU THINK YOU SEE VS. WHAT IT REALLY IS</span>
+                    <p class="font-anton text-4xl sm:text-6xl leading-none">
+                        WOMEN 40+ AREN'T "JUST TIRED." THEY ARE BEING MEDICALLY UNDERSERVED WITHOUT BASELINE DATA.
+                    </p>
+                    <p class="text-lg font-light text-white max-w-2xl mx-auto">
+                        Built directly from Katie Sturino's unscripted confession in Moj's archive (<code>S2E5 @ 20:20</code>): unlearning a lifetime of hiding physical discomfort and demanding real biomarker answers.
+                    </p>
+                </div>
+            </section>
+
+            <!-- MODULE 4C: 4 SPACIOUS SEQUENTIAL PILLARS -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 space-y-12">
+
+                <!-- PILLAR 01 -->
+                <div class="bg-white border border-neutral-200 p-10 md:p-14 shadow-sm flex flex-col md:flex-row gap-10 items-start">
+                    <div class="w-16 h-16 bg-[#1434CB] text-white flex items-center justify-center shrink-0 font-anton text-3xl">
+                        01
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <span class="font-now-label text-xs text-[#1434CB]">AUDIENCE TENSION &amp; CULTURAL INSIGHT</span>
+                        <h3 class="font-anton text-3xl sm:text-4xl text-[#191919]">THE "SWALLOW IT" CONDITIONING IN WOMEN 40+</h3>
+                        <p class="text-neutral-700 text-lg leading-relaxed">
+                            For decades, women entering their 40s have been socially and medically conditioned to "swallow" physical discomfort—3pm exhaustion, brain fog, sudden sleep disruption, weight shifts, and slow recovery—treating feeling terrible either as a personal failure of discipline or the mandatory tax of getting older.
+                        </p>
+                        <div class="bg-[#F0EFE6] p-6 border-l-4 border-[#1434CB] text-sm text-neutral-800">
+                            <strong>Archival Proof (S2E5 @ 20:20):</strong> <em>"Women are innately trained to handle pain, hide pain, not say how it really feels, and just swallow everything. And I'm getting to this point—I'm 43, I don't know if it's perimenopause—but I'm really finding a hard time in just swallowing things."</em> — Katie Sturino
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PILLAR 02 -->
+                <div class="bg-white border border-neutral-200 p-10 md:p-14 shadow-sm flex flex-col md:flex-row gap-10 items-start">
+                    <div class="w-16 h-16 bg-[#F47300] text-white flex items-center justify-center shrink-0 font-anton text-3xl">
+                        02
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <span class="font-now-label text-xs text-[#F47300]">THE CENTRAL IDEA &amp; KEY MESSAGE</span>
+                        <h3 class="font-anton text-3xl sm:text-4xl text-[#191919]">BIOLOGICAL RECEIPTS OVER MEDICAL GASLIGHTING</h3>
+                        <p class="text-neutral-700 text-lg leading-relaxed">
+                            We reframe longevity from vanity "anti-aging" to <strong>biological self-advocacy</strong>. You don’t step into your most powerful decade by politely tolerating a mystery decline or guessing whether it’s your sleep, water, or macros (Moj’s quote in <code>001_reset_the_algorithm</code> at <code>01:18</code>)—you step into it by demanding the internal biomarker receipts (estradiol, progesterone, thyroid, cortisol, metabolic health) and fixing the root cause with physician-guided care.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PILLAR 03 -->
+                <div class="bg-white border border-neutral-200 p-10 md:p-14 shadow-sm flex flex-col md:flex-row gap-10 items-start">
+                    <div class="w-16 h-16 bg-[#C80046] text-white flex items-center justify-center shrink-0 font-anton text-3xl">
+                        03
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <span class="font-now-label text-xs text-[#C80046]">TALENT FIT &amp; UNFORCED BRAND CONNECTION</span>
+                        <h3 class="font-anton text-3xl sm:text-4xl text-[#191919]">WHY THIS CANNOT BE COPY-PASTED ONTO ANOTHER CELEBRITY</h3>
+                        <p class="text-neutral-700 text-lg leading-relaxed">
+                            Katie built her entire career on solving the body problems legacy institutions ignored. At 43, she is actively questioning perimenopause in real time with her audience. The digital health company doesn't interrupt her story with a clinical sales pitch—it enters organically as the <strong>validation tool</strong> that gives her the lab receipts on why her body feels different at 43 and pairs her with a physician who actually listens.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PILLAR 04 -->
+                <div class="bg-white border border-neutral-200 p-10 md:p-14 shadow-sm flex flex-col md:flex-row gap-10 items-start">
+                    <div class="w-16 h-16 bg-[#00A5B5] text-white flex items-center justify-center shrink-0 font-anton text-3xl">
+                        04
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <span class="font-now-label text-xs text-[#00A5B5]">TONE OF VOICE, AUDIENCE REACTION &amp; SOCIAL ROLLOUT</span>
+                        <h3 class="font-anton text-3xl sm:text-4xl text-[#191919]">VISCERAL RELIEF, GROUP-CHAT SHARES &amp; HIGH-INTENT CONVERSION</h3>
+                        <p class="text-neutral-700 text-lg leading-relaxed">
+                            <strong>Tone of Voice:</strong> Defiant, warm, unfiltered, and sharply funny—zero hospital sterility, zero fear-mongering.<br>
+                            <strong>Desired Audience Reaction:</strong> Visceral relief (<em>"She is describing my exact week"</em>), immediate DMs sharing the Reel with female friends over 40, and high-trust clicks to book an at-home baseline panel.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 05: PART 2.3 — VISUAL MOODBOARD (POP + MINIMALIST)    -->
+        <!-- ============================================================= -->
+        <div id="uni-5" class="universe-panel">
+
+            <!-- MODULE 5A: SPACIOUS MINIMALIST INTRO -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center space-y-6">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="w-6 h-6 bg-[#F5C400] flex items-end justify-end p-1">
+                        <div class="w-2.5 h-2.5 bg-[#1434CB]"></div>
+                    </div>
+                    <span class="font-now-label text-xs text-[#1434CB]">PART 2.3 // VISUAL WORLD, STYLING &amp; COLOR ARCHITECTURE</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-6xl text-[#1434CB] tracking-wider uppercase leading-tight">
+                    <span class="font-light">CAMPAIGN</span> <span class="font-extrabold">MOODBOARD</span>
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-neutral-600 text-lg md:text-xl font-light leading-relaxed">
+                    Balancing <strong>Pop-Art Editorial Energy</strong> (vibrant color blocks, duotone splits, and bold `Anton` headlines) with <strong>Minimalist Luxury</strong> (sunlit NYC marble, warm `#F0EFE6` packaging, and airy `Now` typography).
+                </p>
+            </section>
+
+            <!-- MODULE 5B: BRANDBOOK PALETTE & COLOR COMBINATIONS BAR -->
+            <section class="bg-[#F0EFE6] py-16 px-6 border-y border-neutral-200">
+                <div class="max-w-6xl mx-auto space-y-8">
+                    <div class="flex flex-wrap justify-between items-end gap-4">
+                        <div>
+                            <span class="font-now-label text-xs text-neutral-500">MOODBOARD SOCIAL BRAND // PALETTE SYSTEM</span>
+                            <h3 class="font-anton text-3xl text-[#191919] mt-1">PRIMARY MINIMALISM + SECONDARY POP ACCENTS</h3>
+                        </div>
+                        <span class="text-xs text-neutral-500">Inspired directly by Moj Brandbook Slide 06</span>
+                    </div>
+
+                    <!-- Exact Brandbook Color Combinations Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                        <div class="h-28 bg-[#C80046] p-3 flex items-end justify-end">
+                            <div class="w-8 h-8 bg-[#F5C400]"></div>
+                        </div>
+                        <div class="h-28 bg-[#F47300] p-3 flex items-end justify-end">
+                            <div class="w-8 h-8 bg-[#F0EFE6]"></div>
+                        </div>
+                        <div class="h-28 bg-[#F5C400] p-3 flex items-end justify-end">
+                            <div class="w-8 h-8 bg-[#1434CB]"></div>
+                        </div>
+                        <div class="h-28 bg-[#1434CB] p-3 flex items-end justify-end">
+                            <div class="w-8 h-8 bg-[#9CE8D8]"></div>
+                        </div>
+                        <div class="h-28 bg-[#00A5B5] p-3 flex items-end justify-end">
+                            <div class="w-8 h-8 bg-[#F0EFE6]"></div>
+                        </div>
+                        <div class="h-28 bg-white border border-neutral-300 p-3 flex items-end justify-end">
+                            <div class="w-8 h-8 bg-[#F47300]"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 5C: 8 LABELED MOODBOARD REFERENCES -->
+            <section class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- REF 01 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 relative overflow-hidden">
+                            <img src="/__l5e/assets-v1/055f4437-ad6a-4a47-8b9a-4d70c3ed013a/katie_podcast.png"
+                                 alt="Ref 1 Talent Anchor"
+                                 class="w-full h-full object-cover" />
+                            <span class="absolute top-3 left-3 bg-[#191919] text-white font-now-label text-[10px] px-2.5 py-1">01 // ARCHIVAL REF</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">The Talent Anchor</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Warm window light, bold orange-red silk scarf, natural skin texture, direct eye contact.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 02 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 relative overflow-hidden">
+                            <!-- [IMG-16] Replace with Lovable Prompt #16 -->
+                            <img id="img-mood-2" src="/portable-media/photo-1600585154340-be6161a56a0c.jpg"
+                                 alt="Ref 2 NYC Apartment"
+                                 class="w-full h-full object-cover" />
+                            <span class="absolute top-3 left-3 bg-[#1434CB] text-white font-now-label text-[10px] px-2.5 py-1">02 // FULL-COLOR WORLD</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">8:15 AM NYC Loft</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Replacing sterile waiting rooms with warm domestic luxury—marble island, linen, espresso.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 03 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 relative overflow-hidden">
+                            <!-- [IMG-17] Replace with Lovable Prompt #17 -->
+                            <img id="img-mood-3" src="/portable-media/photo-1556228720-195a672e8a03.jpg"
+                                 alt="Ref 3 At-Home Kit"
+                                 class="w-full h-full object-cover" />
+                            <span class="absolute top-3 left-3 bg-[#00A5B5] text-white font-now-label text-[10px] px-2.5 py-1">03 // PRODUCT STYLING</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">Tactile At-Home Kit</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Matte-cream `#F0EFE6` biomarker kit with cobalt `#1434CB` accents—feels like luxury CPG.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 04 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 bg-[#F0EFE6] p-5 flex flex-col justify-between relative">
+                            <span class="bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1 w-fit">04 // UI OVERLAY REF</span>
+                            <div class="bg-white p-4 text-left text-xs space-y-1.5 border-l-4 border-[#1434CB] shadow-sm">
+                                <p class="font-now-label text-[10px] text-[#1434CB]">BIOMARKER RECEIPTS // 43</p>
+                                <p class="text-neutral-800 font-semibold">✓ ESTRADIOL &amp; PROGESTERONE</p>
+                                <p class="text-neutral-800 font-semibold">✓ FREE T3 / THYROID &amp; CORTISOL</p>
+                            </div>
+                            <span class="text-[10px] text-neutral-400">Clean lab receipts over lifestyle video</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">Biomarker Receipts UI</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Translating complex lab panels into clean, human-first visual receipts.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 05 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 bg-[#F0EFE6] p-5 flex flex-col justify-between">
+                            <span class="bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1 w-fit">05 // VIDEO COLOR FX</span>
+                            <div class="grid grid-cols-2 gap-2 my-auto">
+                                <div class="bg-[#191919] text-white h-24 flex flex-col items-center justify-center text-[10px] font-now-label">
+                                    <span>00:00–00:08</span>
+                                    <span class="text-[#9CE8D8] mt-1">B&amp;W + MINT</span>
+                                </div>
+                                <div class="bg-[#C80046] text-white h-24 flex flex-col items-center justify-center text-[10px] font-now-label">
+                                    <span>00:08.5 SNAP</span>
+                                    <span class="text-[#F5C400] mt-1">FULL COLOR</span>
+                                </div>
+                            </div>
+                            <span class="text-[10px] text-neutral-400">Transition on "Done swallowing it"</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">B&amp;W to Warm Color Snap</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">High-contrast B&amp;W for "swallowing pain" snapping into full warm color on the pivot.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 06 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 bg-[#1434CB] p-5 flex flex-col justify-between text-white">
+                            <span class="bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1 w-fit">06 // POP OUTLINE FX</span>
+                            <div class="my-auto border-2 border-[#F5C400] p-4 text-center">
+                                <p class="font-anton text-2xl text-[#F5C400]">YELLOW CUTOUT STROKE</p>
+                                <p class="text-[11px] text-white/80 mt-1">From Brandbook Video FX Slide</p>
+                            </div>
+                            <span class="text-[10px] text-[#9CE8D8]">Thumb-stopping social framing</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">Pop Outline &amp; Cutout FX</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Uses yellow `#F5C400` and crimson `#C80046` subject outlines for key hook frames.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 07 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 bg-white p-5 flex flex-col justify-between border-b border-neutral-100">
+                            <span class="bg-[#F0EFE6] text-[#191919] font-now-label text-[10px] px-2.5 py-1 w-fit">07 // 2-FONT SYSTEM</span>
+                            <div class="my-auto space-y-2 text-left">
+                                <p class="font-anton text-3xl text-[#191919]">ANTON HEADINGS</p>
+                                <p class="font-now-title text-lg font-light text-[#1434CB]">NOW GEOMETRIC SANS</p>
+                                <p class="text-xs text-neutral-400">Zero clutter. Maximum legibility.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">Strict 2-Font Hierarchy</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Follows Brandbook Slide 07: `Anton` for punchy headlines + `Now` (Plus Jakarta) for clean reading.</p>
+                        </div>
+                    </div>
+
+                    <!-- REF 08 -->
+                    <div class="bg-white border border-neutral-200 flex flex-col justify-between shadow-sm">
+                        <div class="h-56 bg-[#F47300] text-[#F0EFE6] p-5 flex flex-col justify-between">
+                            <span class="bg-white text-[#191919] font-now-label text-[10px] px-2.5 py-1 w-fit">08 // PACING &amp; SOUND</span>
+                            <p class="font-anton text-2xl leading-tight my-auto">"ZERO SOFT SPA LO-FI. UPBEAT PERCUSSION + 2S JUMP-CUTS."</p>
+                            <span class="font-now-label text-[10px] text-white">HIGH-RETENTION RHYTHM</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-bold text-[#191919] text-base">Sonic &amp; Editing Rhythm</p>
+                            <p class="text-neutral-600 text-xs leading-relaxed">Driven by Katie's natural vocal cadence, kinetic text slams, and upbeat percussion.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 06: PART 2.4 — PRODUCED HERO TEASER                 -->
+        <!-- ============================================================= -->
+<div class="universe-panel hero-teaser" id="uni-6">
+<div class="hero-heading">
+<div>
+<span class="hero-eyebrow">Part 2.4 // Produced Hero Teaser</span>
+<h2>HERO REEL: "DONE SWALLOWING IT" (TEASER CONCEPT)</h2>
+</div>
+<span class="hero-duration">9:16 Vertical • Final video: 25 seconds</span>
+</div>
+<div class="hero-layout">
+<!-- 9:16 Vertical Video Preview Stage -->
+<div class="hero-stage">
+<div class="hero-player">
+<video aria-label="Final Katie Sturino campaign video" class="hidden" controls="" id="hero-reel-video" playsinline="" preload="metadata"></video>
+<iframe allow="autoplay; fullscreen" allowfullscreen="" class="hidden" frameborder="0" id="hero-reel-iframe" title="Hero reel video"></iframe>
+<div class="hero-end-card hidden" id="hero-end-card" aria-label="Campaign closing beat">
+<div class="hero-end-title" aria-label="Done Swallowing it"><span>Done</span><span>Swallowing</span><span>it</span></div>
+<div class="hero-end-order"><a href="https://www.thenew40s.com" target="_blank" rel="noopener noreferrer"><span>Order now ↗</span><span>www.thenew40s.com</span></a></div>
+<button class="hero-end-replay" type="button" aria-label="Replay hero reel" onclick="previewHeroBeat(1, '00:00 - 00:05', '40s ARE YOUR POWER.', '', '20%');document.getElementById('hero-reel-video').play().catch(() => {})">↺ Replay</button>
+</div>
+<div class="hero-storyboard" id="hero-reel-placeholder">
+<div>
+<span id="player-time-badge">00:00 - 00:05 // THE HOOK</span>
+<span>@katiesturino</span>
+</div>
+<div>
+<div id="player-card-bg">
+                            40s ARE YOUR POWER.
+                        </div>
+<p id="player-caption-text">
+                            "Women are just innately trained to handle pain, hide pain..."
+                        </p>
+<p id="player-source-note">[S2E5.mp4 @ 20:17–20:24]</p>
+</div>
+<div>
+<div>
+<div id="player-progress"></div>
+</div>
+<div>
+<span>Click beats on the right ➔</span>
+<span>00:20</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive 5-Beat Breakdown -->
+<div class="hero-beats"><p class="hero-concept-label">20-second teaser concept + 5-second closing beat • Five-beat production guide</p>
+<div class="reel-beat" onclick="previewHeroBeat(1, '00:00 - 00:05', '40s ARE YOUR POWER.', 'Women are just innately trained to handle pain, hide pain, not say how it really feels... and just swallow everything.', '25%')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<span>BEAT 01 // 00:00 – 00:05 (THE POWER HOOK)</span>
+<p>"40s ARE YOUR POWER."</p>
+<p><strong>Visual &amp; Audio:</strong> Flat graphic background with solid typography, transitioning directly into Katie Sturino's voice: <em>"Women are just innately trained to handle pain, hide pain..."</em></p>
+</div>
+<div class="reel-beat" onclick="previewHeroBeat(2, '00:05 - 00:09', 'THIS ISN\'T RIGHT.', 'Being 40 and exhausted shouldn\'t be the rule.', '50%')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<span>BEAT 02 // 00:05 – 00:09 (TENSION &amp; CALL OUT)</span>
+<p>"THIS ISN'T RIGHT."</p>
+<p><strong>Visual &amp; Audio:</strong> Kinetic subtitling matching your reference video. Text overlay highlights: <em>"Being 40 and exhausted shouldn't be the rule."</em></p>
+</div>
+<div class="reel-beat" onclick="previewHeroBeat(3, '00:09 - 00:15', 'BIOMARKER KITS + PHYSICIAN CARE.', '...I\'m hoping... that rage will cause us to step into power.', '75%')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<span>BEAT 03 // 00:09 – 00:15 (THE PIVOT &amp; PRODUCT VALUE)</span>
+<p>"BIOMARKER KITS + PHYSICIAN CARE."</p>
+<p><strong>Visual &amp; Audio:</strong> Mockup animations of the at-home testing kit and mobile app screens (Estradiol, Progesterone, Cortisol, Thyroid) while Katie says: <em>"...I'm hoping... that rage will cause us to step into power."</em></p>
+</div>
+<div class="reel-beat" onclick="previewHeroBeat(4, '00:15 - 00:20', 'DONE SWALLOWING IT.', 'I don\'t think you step into it because you\'re like \'optimistic\'. I think you step in because you\'re mad, and you need it to change.', '100%')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<span>BEAT 04 // 00:15 – 00:20 (THE CLIMAX)</span>
+<p>"DONE SWALLOWING IT."</p>
+<p><strong>Visual &amp; Audio:</strong> Clean geometric transition into the campaign’s emotional climax, followed by the dedicated closing beat.</p>
+</div>
+<div class="reel-beat" onclick="previewHeroBeat(5, '00:20 - 00:25', 'Done Swallowing it', 'Order at www.thenew40s.com', '100%')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<span>BEAT 05 // 00:20 – 00:25 (THE CLOSING INVITATION)</span>
+<p>“Done Swallowing it” → Order now</p>
+<p><strong>Visual:</strong> A solid Moj brand-blue end card. The words arrive with a soft, staggered lift; the ordering invitation follows with a quiet fade. <strong>CTA:</strong> www.thenew40s.com.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+        <!-- ============================================================= -->
+        <!-- SECTION 07: PART 3 — STRATEGIC DEFENSE & AI STACK             -->
+        <!-- ============================================================= -->
+        <div id="uni-7" class="universe-panel">
+
+            <!-- MODULE 7A: SPACIOUS MINIMALIST INTRO -->
+            <section class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center space-y-6">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="w-6 h-6 bg-[#1434CB] flex items-end justify-end p-1">
+                        <div class="w-2.5 h-2.5 bg-[#9CE8D8]"></div>
+                    </div>
+                    <span class="font-now-label text-xs text-[#1434CB]">PART 3 // EXECUTIVE WALKTHROUGH DEFENSE &amp; AI TRANSPARENCY</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-6xl text-[#1434CB] tracking-wider uppercase leading-tight">
+                    <span class="font-light">DEFENDING</span> <span class="font-extrabold">THE WORK</span>
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-neutral-600 text-lg md:text-xl font-light leading-relaxed">
+                    A concise executive breakdown of why each creative and strategic decision was made—and how AI tools were paired with human editorial judgment.
+                </p>
+            </section>
+
+            <!-- MODULE 7B: 5 DEFENSE MODULES -->
+            <section class="max-w-6xl mx-auto px-6 pb-32 grid md:grid-cols-2 gap-10">
+                <div class="bg-white border border-neutral-200 p-10 md:p-12 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-now-label text-xs text-[#1434CB]">01 // WHY THIS SUBSTACK ANGLE</span>
+                        <span class="w-4 h-4 bg-[#1434CB]"></span>
+                    </div>
+                    <h3 class="font-anton text-3xl text-[#191919]">EDITORIAL CONTINUITY (#1 → #5)</h3>
+                    <p class="text-neutral-700 text-base leading-relaxed">
+                        Rather than writing a generic essay on AI, I treated Substack #5 as the direct sequel to Editions #1–#4. In Edition #4, Moj challenged "talkers" and launched the <em>AI Maxxing</em> cohort with Joan Nguyen. Edition #5 opens <em>inside</em> that cohort weeks later to diagnose the exact problem teams hit once execution gets cheap: the judgment bottleneck (coining <strong>Synthetic Momentum</strong> in the exact dictionary format of Substacks #2 and #3, and weaving in Moj's verbatim Riverside quotes on failure as a data point).
+                    </p>
+                </div>
+
+                <div class="bg-white border border-neutral-200 p-10 md:p-12 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-now-label text-xs text-[#F47300]">02 // HOW IT WAS ADAPTED FOR INSTAGRAM</span>
+                        <span class="w-4 h-4 bg-[#F47300]"></span>
+                    </div>
+                    <h3 class="font-anton text-3xl text-[#191919]">PLATFORM-NATIVE REPURPOSING</h3>
+                    <p class="text-neutral-700 text-base leading-relaxed">
+                        I split the Substack into two native social behaviors using Moj's Brandbook: <strong>1) A 3-Slide Carousel</strong> built for saves and Story shares (pairing Moj's driving footage + search bar overlay with a shareable dictionary card and an orange "Factory vs. Editor-in-Chief" comparison), and <strong>2) A 25s Reel</strong> built for retention—juxtaposing Moj's raw Friday morning car voice note and <em>"Nope"</em> magazine flip with high-authority moments from Riverside and Upfront Summit with Gwyneth Paltrow.
+                    </p>
+                </div>
+
+                <div class="bg-white border border-neutral-200 p-10 md:p-12 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-now-label text-xs text-[#C80046]">03 // WHY KATIE STURINO &amp; "DONE SWALLOWING IT"</span>
+                        <span class="w-4 h-4 bg-[#C80046]"></span>
+                    </div>
+                    <h3 class="font-anton text-3xl text-[#191919]">MINING THE ARCHIVE FOR CULTURAL TRUTH</h3>
+                    <p class="text-neutral-700 text-base leading-relaxed">
+                        Instead of picking a random celebrity from Google, I audited Moj's raw Drive footage and found Katie Sturino in <code>S2E5 - Pre-edited.mp4</code> (min <code>20:17–20:59</code>) articulating the exact tension of the Part 2 brief: turning 43, questioning perimenopause, and refusing to keep "swallowing pain." Building the campaign around that real, unscripted confession makes the link between talent, cultural moment, and at-home biomarker testing 100% earned and non-interchangeable.
+                    </p>
+                </div>
+
+                <div class="bg-[#F0EFE6] border-2 border-[#1434CB] p-10 md:p-12 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-now-label text-xs text-[#1434CB]">04 // OPTIMIZATION &amp; AI TRANSPARENCY</span>
+                        <div class="w-6 h-6 bg-[#1434CB] flex items-end justify-end p-1">
+                            <div class="w-2 h-2 bg-[#F5C400]"></div>
+                        </div>
+                    </div>
+                    <h3 class="font-anton text-3xl text-[#191919]">HUMAN JUDGMENT + INTENTIONAL AI STACK</h3>
+                    <p class="text-neutral-800 text-base leading-relaxed">
+                        <strong>Optimizing for:</strong> Editorial continuity, archival precision, and proving I can own Moj's content ecosystem end-to-end.<br><br>
+                        <strong>AI Tools Used:</strong> I used <strong>Gemini</strong> to cross-reference transcripts across Moj's raw video archive and map the lexical continuity across Substacks #1–#4; <strong>Lovable</strong> and <strong>Figma AI</strong> to architect, refine, and deploy this interactive browser walkthrough and Pop-Minimalist visual assets; <strong>CapCut</strong> for video assembly and kinetic captioning; and <strong>OpusClip</strong> to stress-test high-velocity clip extraction from Moj's long-form archive. I also deliberately invested in <strong>Lovable</strong> because it is an amazing and powerful platform — it let me design, build, and deploy this entire interactive walkthrough myself, proving the systems-and-leverage mindset this role demands. Every editorial angle, archival timestamp connection, and line of copy was selected, written, and edited by my own judgment.
+                    </p>
+                </div>
+                <!-- ============================================================= -->
+<!-- DEFENSE CARD 05: SCALED DISTRIBUTION ENGINE (OPUSCLIP AUDIT)  -->
+<!-- ============================================================= -->
+<div class="col-span-1 md:col-span-2 border-t-2 border-[var(--moj-blue)] pt-10 md:pt-12 space-y-6">
+    <div class="flex flex-wrap justify-between items-center gap-4 border-b border-neutral-200 pb-5">
+        <div class="flex items-center space-x-3">
+            <!-- Brandbook Nested Square Icon -->
+            <div class="w-7 h-7 bg-[var(--moj-blue)] flex items-end justify-end p-1">
+                <div class="w-2.5 h-2.5 bg-[var(--moj-yellow)]"></div>
+            </div>
+            <span class="font-now-label text-xs text-[var(--moj-blue)]">05 // DISTRIBUTION SCALING PROPOSAL &amp; WORKFLOW INNOVATION</span>
+        </div>
+        <span class="bg-[var(--moj-cream)] text-[var(--moj-black)] font-now-label text-[10px] px-3.5 py-1">
+            TESTED ON RAW ARCHIVE: 31 COHERENT CLIPS GENERATED
+        </span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 space-y-4">
+            <h3 class="font-anton text-3xl sm:text-4xl text-[var(--moj-black)] leading-tight">
+                THE FOUNDER DISTRIBUTION ENGINE: OPUSCLIP + BRANDBOOK PRESETS
+            </h3>
+            <p class="text-neutral-700 text-base leading-relaxed">
+                While I hand-crafted the Hero Reel and Instagram Carousels to ensure pristine cultural nuance, long-term brand momentum requires <strong>high-velocity distribution without founder fatigue</strong>. To solve this, I stress-tested Moj’s long-form archive using <strong>OpusClip</strong>.
+            </p>
+            <p class="text-neutral-700 text-base leading-relaxed">
+                By feeding Moj’s full <em>"Reclaim the Flag"</em> documentary into OpusClip's semantic AI model, the system parsed the raw footage, analyzed spoken sentence hooks, and extracted <strong>31 fully coherent, narrative-driven vertical clips</strong> automatically.
+            </p>
+            <div class="bg-[var(--moj-cream)] p-5 border-l-4 border-[var(--moj-orange)] space-y-1.5 text-xs text-neutral-800">
+                <p class="font-bold text-[var(--moj-black)] uppercase">The "Editor-in-Chief" Protocol in Action:</p>
+                <p>
+                    AI eliminates the timeline scrubbing bottleneck (generating 30+ clips from 1 hour of raw tape in minutes), while human curation steps in to approve hooks, verify tone, and eliminate weak cuts before anything touches the public feed.
+                </p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4 lg:pl-6 lg:border-l border-neutral-200">
+            <span class="font-now-label text-[11px] text-[var(--moj-blue)]">AUTOMATED BRANDBOOK COMPLIANCE</span>
+            <div class="space-y-3 text-xs">
+                <div class="py-3.5 pl-3.5 border-l-4 border-[var(--moj-blue)]">
+                    <strong class="font-now-label text-[var(--moj-blue)] block mb-0.5">Custom Brand Assets Loaded</strong>
+                    <p class="text-neutral-600">Presetting Anton font headers, yellow (#F5C400) kinetic captions, and 9:16 autotrack focus.</p>
+                </div>
+                <div class="py-3.5 pl-3.5 border-l-4 border-[var(--moj-crimson)]">
+                    <strong class="font-now-label text-[var(--moj-crimson)] block mb-0.5">Semantic Hook Scoring</strong>
+                    <p class="text-neutral-600">Ranks each cut by social virality index, coherence of thought, and completion rate potential.</p>
+                </div>
+                <div class="py-3.5 pl-3.5 border-l-4 border-[var(--moj-teal)]">
+                    <strong class="font-now-label text-[var(--moj-teal)] block mb-0.5">Volume &amp; Continuity Multiplier</strong>
+                    <p class="text-neutral-600">31 archival clips fuel a 6-week daily omni-channel distribution calendar (Reels, TikTok, Shorts).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPUSCLIP SAMPLE GALLERY -->
+    <div class="border-t border-neutral-200 pt-8 space-y-4">
+        <div class="flex flex-wrap justify-between items-center gap-3">
+            <span class="font-now-label text-[11px] text-[var(--moj-blue)]">PROOF OF CONCEPT // OPUSCLIP OUTPUT SAMPLES</span>
+            <span class="bg-[var(--moj-yellow)] text-[var(--moj-black)] font-now-label text-[10px] px-3 py-1">AUTO-GENERATED FROM RAW ARCHIVE</span>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+            <figure class="space-y-2">
+                <div class="bg-[var(--moj-black)] border-2 border-[var(--moj-blue)] shadow-sm">
+                    <video id="opusclip-video-1" class="w-full aspect-[9/16] max-h-[480px] object-contain mx-auto" controls playsinline preload="metadata"></video>
+                </div>
+                <figcaption class="font-now-label text-[10px] text-neutral-500 uppercase">Sample Clip 01 // Semantic hook extraction + brandbook captions</figcaption>
+            </figure>
+            <figure class="space-y-2">
+                <div class="bg-[var(--moj-black)] border-2 border-[var(--moj-blue)] shadow-sm">
+                    <video id="opusclip-video-2" class="w-full aspect-[9/16] max-h-[480px] object-contain mx-auto" controls playsinline preload="metadata"></video>
+                </div>
+                <figcaption class="font-now-label text-[10px] text-neutral-500 uppercase">Sample Clip 02 // 9:16 autotrack focus + kinetic captioning</figcaption>
+            </figure>
+        </div>
+        <p class="text-xs text-neutral-600 leading-relaxed">These two clips are real OpusClip outputs from Moj's long-form archive — demonstrating what a daily, founder-fatigue-free distribution engine could ship with minimal human polish.</p>
+    </div>
+</div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- ================================================================= -->
+    <!-- FOOTER: CLEAN MINIMALIST SIGNATURE                                -->
+    <!-- ================================================================= -->
+    <footer class="bg-white text-neutral-400 border-t border-neutral-200 px-6 py-8 text-center text-[11px] font-now-label mt-auto">
+        MARKETING COORDINATOR PRACTICAL TEST // INTERACTIVE WALKTHROUGH BY HUGO CASTRO
+    </footer>
+
+    <!-- ================================================================= -->
+    <!-- INTERACTIVE JAVASCRIPT ENGINE                                     -->
+    <!-- ================================================================= -->
+    <script>
+        const VIDEO_LINKS_CONFIG = {
+            'moj-reel': localStorage.getItem('trolley_moj_example_v1_url') || '',
+            'hero-reel': localStorage.getItem('trolley_hero_reel_url') || ''
+        };
+
+        addEventListener('message', event => {
+            if (event.origin !== location.origin || event.source !== parent || event.data?.type !== 'moj-instagram-asset') return;
+            if (typeof event.data.url !== 'string') return;
+            document.getElementById('instagram-grid-image').src = event.data.url;
+            if (typeof event.data.avatarUrl === 'string') document.getElementById('instagram-avatar-image').src = event.data.avatarUrl;
+            if (typeof event.data.heroVideoUrl === 'string') {
+                const video = document.getElementById('hero-reel-video');
+                if (video) {
+                    video.removeAttribute('src');
+                    video.innerHTML = '';
+                    for (const [src, type] of [[event.data.heroVideoUrl, 'video/mp4'], [event.data.heroFallbackUrl, 'video/webm']]) {
+                        if (typeof src !== 'string') continue;
+                        const source = document.createElement('source'); source.src = src; source.type = type; video.append(source);
+                    }
+                    video.poster = event.data.heroPosterUrl || '';
+                    video.classList.remove('hidden'); video.load();
+                    document.getElementById('hero-reel-placeholder').classList.add('hidden');
+                    document.getElementById('hero-reel-iframe').classList.add('hidden');
+                }
+            }
+            if (typeof event.data.instagramVideoUrl === 'string') {
+                const video = document.getElementById('moj-reel-video');
+                if (video) {
+                    video.removeAttribute('src'); video.innerHTML = '';
+                    for (const [src, type] of [[event.data.instagramVideoUrl, 'video/mp4'], [event.data.instagramFallbackUrl, 'video/webm']]) {
+                        if (typeof src !== 'string') continue;
+                        const source = document.createElement('source'); source.src = src; source.type = type; video.append(source);
+                    }
+                    video.poster = event.data.instagramPosterUrl || '';
+                    video.classList.remove('hidden'); video.load();
+                    document.getElementById('moj-reel-placeholder').classList.add('hidden');
+                    document.getElementById('moj-reel-iframe').classList.add('hidden');
+                }
+            }
+            if (Array.isArray(event.data.videoUrls)) {
+                const v1 = document.getElementById('opusclip-video-1');
+                const v2 = document.getElementById('opusclip-video-2');
+                if (typeof event.data.videoUrls[0] === 'string' && v1) v1.src = event.data.videoUrls[0];
+                if (typeof event.data.videoUrls[1] === 'string' && v2) v2.src = event.data.videoUrls[1];
+            }
+        });
+
+        let activeOrbitIndex = 0;
+        const totalCards = 5;
+        const theta = 360 / totalCards;
+        const radius = 360;
+
+        const orbitLabels = [
+            "ACTIVE MODULE: PART 1.1 // THE NEXT SUBSTACK (#5)",
+            "ACTIVE MODULE: PART 1.2 // TWO INSTAGRAM PIECES",
+            "ACTIVE MODULE: PART 2.1 // 4-TALENT SHORTLIST (CASTING BOARD)",
+            "ACTIVE MODULE: PART 2.2 & 2.3 // 'DONE SWALLOWING IT' CAMPAIGN & MOODBOARD",
+            "ACTIVE MODULE: PART 2.4 & PART 3 // HERO TEASER & EXECUTIVE DEFENSE"
+        ];
+
+        const orbitTargets = ['uni-1', 'uni-2', 'uni-3', 'uni-4', 'uni-6'];
+
+        function updateOrbitPositions() {
+            const cards = document.querySelectorAll('.orbit-card');
+            cards.forEach((card, index) => {
+                let offset = (index - activeOrbitIndex) % totalCards;
+                if (offset < 0) offset += totalCards;
+
+                const angle = offset * theta;
+                const rad = (angle * Math.PI) / 180;
+
+                const x = Math.sin(rad) * radius;
+                const z = Math.cos(rad) * radius - 140;
+                const rotY = angle > 180 ? (angle - 360) * 0.48 : angle * 0.48;
+
+                const isFront = offset === 0;
+                const scale = isFront ? 1.05 : (z < -150 ? 0.78 : 0.88);
+
+                card.style.transform = `translate3d(${x}px, 0px, ${z}px) rotateY(${rotY}deg) scale(${scale})`;
+                card.style.zIndex = Math.round(z + 500);
+                card.style.opacity = isFront ? '1' : (z < -180 ? '0.45' : '0.82');
+                card.style.filter = isFront ? 'blur(0px)' : (z < -180 ? 'blur(1.5px)' : 'blur(0.3px)');
+            });
+
+            const labelEl = document.getElementById('orbit-active-label');
+            if (labelEl) labelEl.innerText = orbitLabels[activeOrbitIndex];
+        }
+
+        function rotateOrbit(direction) {
+            activeOrbitIndex = (activeOrbitIndex + direction + totalCards) % totalCards;
+            updateOrbitPositions();
+        }
+
+
+        function warpSpeed(done) {
+            const cv = document.getElementById('warp-canvas');
+            if (!cv || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { done(); return; }
+            const ctx = cv.getContext('2d'); const W = cv.width = innerWidth, H = cv.height = innerHeight;
+            const cx = W/2, cy = H/2; const stars = Array.from({length: 420}, () => ({ x:(Math.random()-.5)*W, y:(Math.random()-.5)*H, z:Math.random()*W }));
+            const cols = ['#B8C4F2','#BDE8DC','#F6D9A8','#F4C6D6'];
+            cv.classList.add('on'); const t0 = performance.now(); let switched = false;
+            function frame(now) {
+                const p = (now - t0) / 1100; const speed = 8 + 140 * Math.pow(Math.min(p,1), 2.2);
+                ctx.fillStyle = 'rgba(250,247,242,0.32)'; ctx.fillRect(0,0,W,H);
+                for (const s of stars) {
+                    const px = cx + s.x/s.z*W*.5, py = cy + s.y/s.z*W*.5; s.z -= speed;
+                    if (s.z < 1) { s.x=(Math.random()-.5)*W; s.y=(Math.random()-.5)*H; s.z=W; continue; }
+                    const nx = cx + s.x/s.z*W*.5, ny = cy + s.y/s.z*W*.5;
+                    ctx.strokeStyle = cols[(s.x|0)&3]; ctx.lineWidth = Math.max(1.2, (1 - s.z/W)*4);
+                    ctx.beginPath(); ctx.moveTo(px,py); ctx.lineTo(nx,ny); ctx.stroke();
+                }
+                if (p > .85) { ctx.fillStyle = `rgba(255,255,255,${Math.min(1,(p-.85)/.15)})`; ctx.fillRect(0,0,W,H); }
+                if (p >= 1 && !switched) { switched = true; done(); cv.classList.remove('on'); setTimeout(()=>ctx.clearRect(0,0,W,H),300); return; }
+                requestAnimationFrame(frame);
+            }
+            ctx.clearRect(0,0,W,H); requestAnimationFrame(frame);
+        }
+        (function depthField(){
+            const shapes = document.querySelectorAll('.df-shape'); let tx=0, ty=0, cx=0, cy=0;
+            addEventListener('mousemove', e => { tx = e.clientX/innerWidth - .5; ty = e.clientY/innerHeight - .5; });
+            const tp = e => { const t = e.touches[0]; if (!t) return; tx = (t.clientX/innerWidth - .5)*.6; ty = (t.clientY/innerHeight - .5)*.6; };
+            addEventListener('touchstart', tp, { passive: true });
+            addEventListener('touchmove', tp, { passive: true });
+            addEventListener('touchend', () => { tx *= .5; ty *= .5; }, { passive: true });
+            addEventListener('deviceorientation', e => { if (e.gamma == null) return; tx = Math.max(-.5, Math.min(.5, e.gamma/90))*.6; ty = Math.max(-.5, Math.min(.5, (e.beta-45)/90))*.6; });
+            (function loop(){ cx += (tx-cx)*.06; cy += (ty-cy)*.06; const sc = scrollY;
+                shapes.forEach(s => { const d = +s.dataset.depth; s.style.transform = `translate3d(${-cx*80*d}px, ${-cy*60*d - sc*d*.3}px, 0)`; });
+                requestAnimationFrame(loop); })();
+        })();
+
+        function handlePolaroidClick(index, universeId) {
+            if (index !== activeOrbitIndex) { activeOrbitIndex = index; updateOrbitPositions(); setTimeout(() => warpSpeed(() => warpToUniverse(universeId)), 450); }
+            else { warpSpeed(() => warpToUniverse(universeId)); }
+        }
+
+        function warpActiveFrontCard() {
+            warpSpeed(() => warpToUniverse(orbitTargets[activeOrbitIndex]));
+        }
+
+        let dragStartX = null;
+        const orbitWrapper = document.getElementById('orbit-stage-wrapper');
+
+        if (orbitWrapper) {
+            orbitWrapper.addEventListener('mousedown', (e) => { dragStartX = e.clientX; });
+            window.addEventListener('mouseup', (e) => {
+                if (dragStartX === null) return;
+                const diff = e.clientX - dragStartX;
+                if (Math.abs(diff) > 45) rotateOrbit(diff < 0 ? 1 : -1);
+                dragStartX = null;
+            });
+
+            orbitWrapper.addEventListener('touchstart', (e) => { dragStartX = e.touches[0].clientX; }, { passive: true });
+            orbitWrapper.addEventListener('touchend', (e) => {
+                if (dragStartX === null) return;
+                const diff = e.changedTouches[0].clientX - dragStartX;
+                if (Math.abs(diff) > 40) rotateOrbit(diff < 0 ? 1 : -1);
+                dragStartX = null;
+            });
+        }
+
+        function warpToUniverse(universeId) {
+            const portal = document.getElementById('portal-stage');
+            portal.classList.add('hidden');
+            document.getElementById('human-gallery').classList.add('hidden');
+            document.getElementById('universe-stage').classList.remove('hidden');
+            openUniverse(universeId);
+        }
+
+        function warpFromHud(universeId) {
+            const portal = document.getElementById('portal-stage');
+            if (!portal.classList.contains('hidden')) {
+                warpToUniverse(universeId);
+            } else {
+                openUniverse(universeId);
+            }
+        }
+
+        function openUniverse(universeId) {
+            document.querySelectorAll('.universe-panel').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById(universeId);
+            if (target) target.classList.add('active');
+
+            document.querySelectorAll('.hud-btn').forEach(btn => {
+                btn.className = "hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition";
+            });
+            const activeBtn = document.getElementById('nav-' + universeId);
+            if (activeBtn) {
+                activeBtn.className = "hud-btn px-3 py-2 bg-[#1434CB] text-white transition";
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function returnToPortal() {
+            document.getElementById('universe-stage').classList.add('hidden');
+            document.getElementById('portal-stage').classList.remove('hidden');
+            document.getElementById('human-gallery').classList.remove('hidden');
+            document.querySelectorAll('.hud-btn').forEach(btn => {
+                btn.className = "hud-btn px-3 py-2 bg-white border border-neutral-200 text-neutral-600 hover:border-[#1434CB] hover:text-[#1434CB] transition";
+            });
+            updateOrbitPositions();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function selectSubstackEdition(edNum) {
+            document.querySelectorAll('.substack-article').forEach(art => art.classList.add('hidden'));
+            const targetArt = document.getElementById('substack-ed-' + edNum);
+            if (targetArt) targetArt.classList.remove('hidden');
+
+            for (let i = 1; i <= 5; i++) {
+                const tab = document.getElementById('sub-tab-' + i);
+                if (!tab) continue;
+                if (i === edNum) {
+                    tab.className = "substack-node text-left bg-[#1434CB] text-white p-6 border-2 border-[#1434CB] shadow-lg transition flex flex-col justify-between h-48";
+                } else {
+                    tab.className = "substack-node text-left bg-white text-[#191919] p-6 border border-neutral-200 hover:border-[#1434CB] transition flex flex-col justify-between h-48";
+                }
+            }
+        }
+
+        function jumpToSubstack(edNum, targetElementId) {
+            selectSubstackEdition(edNum);
+            setTimeout(() => {
+                const el = document.getElementById(targetElementId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.remove('flash-target');
+                    void el.offsetWidth;
+                    el.classList.add('flash-target');
+                }
+            }, 100);
+        }
+
+        function toggleXRay() {
+            const body = document.getElementById('substack-body');
+            if (body) body.classList.toggle('xray-active');
+        }
+
+        function switchSlide(num) {
+            [1, 2, 3].forEach(n => {
+                document.getElementById('ig-slide-' + n).classList.add('hidden');
+                document.getElementById('slide-btn-' + n).className = 'px-6 py-3 bg-white text-[#191919] border border-neutral-300 font-now-label text-xs transition';
+            });
+            document.getElementById('ig-slide-' + num).classList.remove('hidden');
+            document.getElementById('slide-btn-' + num).className = 'px-6 py-3 bg-[#1434CB] text-white font-now-label text-xs shadow-sm transition';
+        }
+
+        function filterTalent(category) {
+            document.querySelectorAll('.talent-card').forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function previewMojReelBeat(badge, text, source) {
+            document.getElementById('moj-beat-badge').innerText = badge;
+            document.getElementById('moj-beat-text').innerText = `"${text}"`;
+            document.getElementById('moj-beat-source').innerText = source;
+            const video = document.getElementById('moj-reel-video');
+            const start = badge.match(/(\d{2}):(\d{2})/);
+            if (video && start && !video.classList.contains('hidden') && Number.isFinite(video.duration)) {
+                video.currentTime = Number(start[1]) * 60 + Number(start[2]);
+            }
+        }
+
+        function setHeroEndCard(show) {
+            const endCard = document.getElementById('hero-end-card');
+            if (endCard) endCard.classList.toggle('hidden', !show);
+        }
+
+        const heroFilm = document.getElementById('hero-reel-video');
+        if (heroFilm) {
+            heroFilm.addEventListener('timeupdate', () => setHeroEndCard(heroFilm.currentTime >= 20));
+            heroFilm.addEventListener('seeked', () => setHeroEndCard(heroFilm.currentTime >= 20));
+            heroFilm.addEventListener('ended', () => setHeroEndCard(true));
+            heroFilm.addEventListener('loadstart', () => setHeroEndCard(false));
+        }
+
+        function previewHeroBeat(beatNum, timecode, caption, sourceNote, progressWidth) {
+            document.getElementById('player-time-badge').innerText = `BEAT 0${beatNum} // ${timecode}`;
+            document.getElementById('player-caption-text').innerText = `"${caption}"`;
+            document.getElementById('player-source-note').innerText = sourceNote;
+            document.getElementById('player-progress').style.width = progressWidth;
+            const card = document.getElementById('player-card-bg');
+            if (card) { card.innerText = caption; card.dataset.beat = String(beatNum); }
+            setHeroEndCard(beatNum === 5);
+            const video = document.getElementById('hero-reel-video');
+            if (video && !video.classList.contains('hidden') && Number.isFinite(video.duration)) {
+                video.currentTime = [0, 5, 9, 15, 20][beatNum - 1] || 0;
+            }
+
+        }
+
+        function formatEmbedUrl(rawUrl) {
+            const url = rawUrl.trim();
+            if (!url) return null;
+            if (url.includes('loom.com/share/')) return { type: 'iframe', src: url.replace('loom.com/share/', 'loom.com/embed/') };
+            if (url.includes('youtube.com/watch?v=')) return { type: 'iframe', src: `https://www.youtube.com/embed/${url.split('v=')[1].split('&')[0]}` };
+            if (url.includes('youtu.be/')) return { type: 'iframe', src: `https://www.youtube.com/embed/${url.split('youtu.be/')[1].split('?')[0]}` };
+            if (url.includes('youtube.com/shorts/')) return { type: 'iframe', src: `https://www.youtube.com/embed/${url.split('shorts/')[1].split('?')[0]}` };
+            if (url.includes('drive.google.com/file/d/')) {
+                const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                if (match && match[1]) return { type: 'iframe', src: `https://drive.google.com/file/d/${match[1]}/preview` };
+            }
+            return { type: 'video', src: url };
+        }
+
+        function embedCustomVideo(prefix, optionalDirectUrl) {
+            const inputEl = document.getElementById(`${prefix}-url-input`);
+            const rawUrl = optionalDirectUrl || (inputEl ? inputEl.value : '');
+            const parsed = formatEmbedUrl(rawUrl);
+            if (!parsed) return;
+
+            const videoEl = document.getElementById(`${prefix}-video`);
+            const iframeEl = document.getElementById(`${prefix}-iframe`);
+            const placeholderEl = document.getElementById(`${prefix}-placeholder`);
+
+            const storageKey = prefix === 'moj-reel' ? 'trolley_moj_example_v1_url' : 'trolley_hero_reel_url';
+            localStorage.setItem(storageKey, rawUrl);
+
+            if (placeholderEl) placeholderEl.classList.add('hidden');
+
+            if (parsed.type === 'video') {
+                if (iframeEl) iframeEl.classList.add('hidden');
+                if (videoEl) {
+                    videoEl.src = parsed.src;
+                    videoEl.classList.remove('hidden');
+                    videoEl.load();
+                }
+            } else {
+                if (videoEl) videoEl.classList.add('hidden');
+                if (iframeEl) {
+                    iframeEl.src = parsed.src;
+                    iframeEl.classList.remove('hidden');
+                }
+            }
+        }
+
+        document.querySelectorAll('.reel-beat').forEach(beat => {
+            beat.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    beat.click();
+                }
+            });
+        });
+
+        // Scroll-reveal intro transitions + scroll parallax for section imagery
+        (function initSectionMotion() {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const targets = document.querySelectorAll('.universe-panel img, .universe-panel video');
+            targets.forEach((el, i) => {
+                el.classList.add('reveal-img');
+                el.style.transitionDelay = `${(i % 6) * 70}ms`;
+                if (!reduceMotion && !el.closest('#portal-stage')) el.classList.add('plx');
+            });
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            targets.forEach(el => io.observe(el));
+
+            if (!reduceMotion) {
+                let ticking = false;
+                const applyParallax = () => {
+                    ticking = false;
+                    const vh = window.innerHeight;
+                    document.querySelectorAll('.universe-panel.active .plx').forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.bottom < 0 || rect.top > vh) return;
+                        const progress = (rect.top + rect.height / 2 - vh / 2) / vh; // -0.5 .. 0.5
+                        el.style.transform = `translateY(${(progress * -22).toFixed(1)}px)`;
+                    });
+                };
+                window.addEventListener('scroll', () => {
+                    if (!ticking) { ticking = true; requestAnimationFrame(applyParallax); }
+                }, { passive: true });
+                applyParallax();
+            }
+        })();
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateOrbitPositions();
+            if (VIDEO_LINKS_CONFIG['moj-reel']) {
+                document.getElementById('moj-reel-url-input').value = VIDEO_LINKS_CONFIG['moj-reel'];
+                embedCustomVideo('moj-reel', VIDEO_LINKS_CONFIG['moj-reel']);
+            }
+            if (VIDEO_LINKS_CONFIG['hero-reel']) {
+                const heroInput = document.getElementById('hero-reel-url-input');
+                if (heroInput) heroInput.value = VIDEO_LINKS_CONFIG['hero-reel'];
+                embedCustomVideo('hero-reel', VIDEO_LINKS_CONFIG['hero-reel']);
+            }
+        });
+    </script>
+</body>
+</html>
